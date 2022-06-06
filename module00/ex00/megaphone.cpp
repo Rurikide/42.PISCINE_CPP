@@ -6,14 +6,12 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:03:37 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/05 00:24:50 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/06 10:52:53 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
-
-// Do I need a megaphone class???
+#include <iostream> // for  namespace std
+#include <cctype> // for  toupper
 
 int	main(int argc, char **argv)
 {
