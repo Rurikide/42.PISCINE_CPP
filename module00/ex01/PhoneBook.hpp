@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:03:44 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/07 16:42:57 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/07 16:55:12 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class PhoneBook {
 	public: 
 			PhoneBook( void );
 			~PhoneBook( void );
-
+			
+			int Command(char* command);
 			int	Add(char* user_input);
 			int	Search(char* user_input);
 			int	Exit(char* user_input);
