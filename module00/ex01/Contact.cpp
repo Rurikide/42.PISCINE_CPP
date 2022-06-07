@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 11:59:30 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/06 12:00:40 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/07 16:22:53 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/07 16:36:27 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include <iostream>
+#include "Contact.hpp"
 
-int main() {
+Contact::Contact( void ) {
 
-	PhoneBook instance;
+	std::cout << "Contact Constructor called" << std::endl;
+	return;
+}
 
-	return (0);
+Contact::~Contact( void ) {
+
+	std::cout << "Contact Destructor called" << std::endl;
+	return;
 }
