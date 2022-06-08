@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:10:54 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/07 16:32:01 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:59:01 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@
 class Contact {
 
 	private:
-			char*	FirstName;
-			char*	LastName;
-			char*	PhoneNumber;
-			char*	DarkestSecret;
+		std::string	firstName;
+		std::string	lastName;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
 
 	public:
-			Contact( void );
-			~Contact( void );
+		Contact( void );
+		~Contact( void );
 
-			char*	getFirstName( void ) const;
-			char*	getLastName( void ) const;
-			char*	getPhoneNumber( void ) const;
-			char*	getDarkestSecret( void ) const;
+		std::string	getFirstName( void ) const;
+		std::string	getLastName( void ) const;
+		std::string	getPhoneNumber( void ) const;
+		std::string	getDarkestSecret( void ) const;
 
-			void	setFirstName(char* FirstName);
-			void	setLastName(char* LastName);
-			void	setPhoneNumber(char* PhoneNumber);
-			void	setDarkestSecret(char *DarkestSecret);
+		void	setFirstName(std::string firstName);
+		void	setLastName(std::string lastName);
+		void	setPhoneNumber(std::string phoneNumber);
+		void	setDarkestSecret(std::string darkestSecret);
 
 };
 
