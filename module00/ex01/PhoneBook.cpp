@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:26:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/08 16:02:44 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/10 15:13:13 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,22 @@ int	PhoneBook::Add( void )
 	std::getline(std::cin, userInput);
 	this->list[i].setFirstName(userInput);
 
-	std::cout << "Contact first name is " << this->list[i].getFirstName() << std::endl;
+	std::cout << "Enter last name" << std::endl;
+	std::getline(std::cin, userInput);
+	this->list[i].setLastName(userInput);
+
+	std::cout << "Enter phone number" << std::endl;
+	std::getline(std::cin, userInput);
+	this->list[i].setPhoneNumber(userInput);
+
+	std::cout << "Enter darkest secret" << std::endl;
+	std::getline(std::cin, userInput);
+	this->list[i].setDarkestSecret(userInput);
+
+
+
+
+//	std::cout << "Contact first name is " << this->list[i].getFirstName() << std::endl;
 	return (0);
 }
 
