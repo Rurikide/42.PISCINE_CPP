@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   define.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 12:03:44 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/12 16:07:38 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/12 14:49:59 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/12 14:54:55 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+#ifndef DEFINE_HPP
+#define DEFINE_HPP
 
-#include "Contact.hpp"
+#define AKAI "\e[0;31m"
+#define MIDORI "\e[0;32m"
+#define SORAIRO "\e[0;36m"
+#define MURASAKI "\e[35m"
+#define END_COLOR "\e[0m"
 
-#define MAX_CAPACITY 8
-
-class PhoneBook {
-
-	private:
-			Contact	list[MAX_CAPACITY];
-
-	public: 
-			PhoneBook( void );
-			~PhoneBook( void );
-
-			void	Add( void );
-			void	Search( void );
-};
+#define SUCCESS 0
+#define FAIL -1
 
 #endif
