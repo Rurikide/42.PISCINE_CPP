@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:03:44 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/12 16:07:38 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:45:55 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class PhoneBook {
 
 			void	Add( void );
 			void	Search( void );
+			void	Detail( void );
 };
 
 #endif

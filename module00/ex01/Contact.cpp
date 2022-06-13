@@ -6,10 +6,11 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:22:53 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/12 17:02:03 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:04:43 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cctype>
 #include <iostream>
 #include "Contact.hpp"
 #include "define.hpp"
@@ -28,6 +29,11 @@ std::string	Contact::getFirstName( void ) const
 std::string	Contact::getLastName( void ) const
 {
 	return this->lastName;
+}
+
+std::string Contact::getNickname( void) const
+{
+	return this->nickname;
 }
 
 std::string	Contact::getPhoneNumber( void ) const
@@ -53,6 +59,11 @@ void	Contact::setLastName(std::string lastName)
 	this->lastName = lastName;
 }
 
+void	Contact::setNickname(std::string nickname)
+{
+	this->nickname = nickname;
+}
+
 void	Contact::setPhoneNumber(std::string phoneNumber)
 {
 	this->phoneNumber = phoneNumber;
@@ -64,7 +75,7 @@ void	Contact::setDarkestSecret(std::string darkestSecret)
 }
 
 
-/* other member method */
+/*----------------other-member-methods -----------------*/
 
 bool	Contact::validNameString(std::string nameString)
 {
@@ -77,7 +88,7 @@ bool	Contact::validNameString(std::string nameString)
 	}
 	while (i < nameString.length())
 	{
-		if (!isalpha(nameString[i]) && !isspace(nameString[i]) && nameString[i] != '-')
+		if (!std::isalpha(nameString[i]) && !std::isspace(nameString[i]) && nameString[i] != '-')
 		{
 			std::cout << AKAI "Characters only. hint: abc" END_COLOR << std::endl;
 		 	return false;
@@ -98,9 +109,22 @@ bool	Contact::validPhoneNumber(std::string phoneNumber)
 	}
 	while (i < phoneNumber.length())
 	{
-		if (!isdigit(phoneNumber[i]) && !isspace(phoneNumber[i]) && phoneNumber[i] != '-')
+		if (!std::isdigit(phoneNumber[i]) && !std::isspace(phoneNumber[i]) && phoneNumber[i] != '-')
+		{
+			std::cout << AKAI "Numbers only. hint: 123" END_COLOR << std::endl;
 			return false;
+		}
 		i++;
+	}
+	return true;
+}
+
+bool	Contact::validUserInput(std::string userInput)
+{
+	if (userInput.length() == 0)
+	{
+		std::cout << AKAI "type something" END_COLOR << std::endl;
+		return false;
 	}
 	return true;
 }
