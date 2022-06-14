@@ -6,7 +6,7 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/07 16:24:40 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/14 09:31:13 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,4 +42,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all clean
+.PHONY: all clean fclean re
