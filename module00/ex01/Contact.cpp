@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:22:53 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/13 15:04:43 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:04:17 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string	Contact::getDarkestSecret( void ) const
 }
 
 
-/*---------------CONCTACT-CLASS-SETTERS---------------*/
+/*---------------CONTACT-CLASS-SETTERS---------------*/
 
 void	Contact::setFirstName(std::string firstName)
 {
