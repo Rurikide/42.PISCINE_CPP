@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   define.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 14:05:35 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/14 15:51:21 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/12 14:49:59 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/12 14:54:55 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef DEFINE_HPP
+#define DEFINE_HPP
 
-#define MESSAGE "BraiiiiiiinnnzzzZ"
+#define AKAI "\e[0;31m"
+#define MIDORI "\e[0;32m"
+#define SORAIRO "\e[0;36m"
+#define MURASAKI "\e[35m"
+#define END_COLOR "\e[0m"
 
-#include <iostream>
-
-class Zombie {
-
-	private:
-		std::string _name;
-	
-	public:
-		Zombie( void );
-		~Zombie( void );
-		
-		std::string	getName( void );
-		void		setName( std::string name );
-		void		announce( void );
-};
-
-Zombie* newZombie( std::string name );
-void	randomChump( std::string name );
+#define SUCCESS 0
+#define FAIL -1
 
 #endif
