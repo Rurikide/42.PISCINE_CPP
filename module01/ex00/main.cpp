@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:40:50 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/14 16:16:12 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:34:05 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 int	main( void )
 {
-	Zombie* zombie = newZombie("Helene");
+	Zombie* zombie = newZombie("Heappie");
 
 	zombie->announce();
 
-	randomChump("Stephen");
+	randomChump("Stanck");
 	
 	delete zombie;
 	return SUCCESS;
