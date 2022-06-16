@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:00:39 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/16 16:18:47 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:40:35 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,38 @@ int	main( void )
 {
 	Weapon	whip("Pleather whip");
 
-	HumanA	Alex("Alex", whip);
+	HumanA	alex("Alex", whip);
 
-	Alex.attack();
-	Alex.getWeapon().setType("Ninetails whip");
-	Alex.attack();
+	alex.attack();
+	alex.getWeapon().setType("Ninetails whip");
+	alex.attack();
+	whip.setType("Poison glitter whip");
+	alex.attack();
 
 	Weapon katana("Murasame");
 
-	HumanB Keo("Keo");
-	Keo.setWeapon(&katana);
-	Keo.attack();
+	HumanB keo("Keo");
+	keo.setWeapon(&katana);
+	keo.attack();
 
+	/*------------------------------------------*/
+
+	{
+		Weapon	club = Weapon("crude spiked club");
+
+		HumanA	bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon	club = Weapon("crude spiked club");
+
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return SUCCESS;
 }

@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 12:12:17 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/16 16:16:17 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:39:12 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ Weapon*	HumanB::getWeapon( void ) const
 	return this->_weapon;
 }
 
-void	HumanB::setWeapon( Weapon* weapon )
+// setWeapon receives a reference instead of a pointer, to do exactly as the main in the subject. 
+void	HumanB::setWeapon( Weapon& weapon )
 {
 	this->_weapon = weapon;
 }
