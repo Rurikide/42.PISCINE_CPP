@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:55:17 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/16 14:57:32 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:27:06 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class HumanB {
 		
 		std::string	getName( void ) const;
 		Weapon*		getWeapon( void ) const;
-		void		setWeapon( std::string );
+		void		setWeapon( Weapon* weapon );
 		void		attack( void );
 };
 
