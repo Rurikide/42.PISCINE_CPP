@@ -15,7 +15,7 @@
 #include "HumanA.hpp"
 #include "Define.hpp"
 
-HumanA::HumanA( std::string name, Weapon& weapon ) : _name(name), _weapon(weapon)
+HumanA::HumanA( const std::string name, Weapon& weapon ) : _name(name), _weapon(weapon)
 {
 	std::cout << KIIRO "HumanA is constructed" END_COLOR << std::endl;
 }
@@ -35,7 +35,7 @@ Weapon&	HumanA::getWeapon( void ) const
 	return this->_weapon;
 }
 
-void	HumanA::attack( void )
+void	HumanA::attack( void ) const
 {
 	std::cout << AKAI << this->getName() << END_COLOR << " attacks with their " << AKAI << this->getWeapon().getType() <<  END_COLOR << std::endl;
 }

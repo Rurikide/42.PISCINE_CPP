@@ -16,7 +16,7 @@
 #include "HumanB.hpp"
 #include "Define.hpp"
 
-HumanB::HumanB( std::string name ) : _name(name), _weapon(NULL)
+HumanB::HumanB( const std::string name ) : _name(name), _weapon(NULL)
 {
 	std::cout << KIIRO "HumanB is constructed" END_COLOR << std::endl;
 }
@@ -39,10 +39,10 @@ Weapon*	HumanB::getWeapon( void ) const
 // setWeapon receives a reference instead of a pointer, to do exactly as the main in the subject. 
 void	HumanB::setWeapon( Weapon& weapon )
 {
-	this->_weapon = weapon;
+	this->_weapon = &weapon;
 }
 
-void	HumanB::attack( void )
+void	HumanB::attack( void ) const
 {
 	if (this->getWeapon() == NULL)
 	{

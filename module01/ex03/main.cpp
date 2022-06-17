@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:00:39 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/16 16:40:35 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:33:42 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ int	main( void )
 
 	Weapon katana("Murasame");
 
-	HumanB keo("Keo");
-	keo.setWeapon(&katana);
-	keo.attack();
+	HumanB seb("Seb");
+	seb.attack();
+	seb.setWeapon(katana);
+	seb.attack();
 
 	/*------------------------------------------*/
 

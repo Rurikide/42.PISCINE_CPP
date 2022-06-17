@@ -24,12 +24,12 @@ class HumanA {
 		Weapon&		_weapon;
 	
 	public:
-		HumanA( std::string name, Weapon& weapon );
+		HumanA( const std::string name, Weapon& weapon );
 		~HumanA( void );
 		
 		std::string	getName( void ) const;
 		Weapon&		getWeapon( void ) const;
-		void		attack( void );
+		void		attack( void ) const;
 };
 
 #endif

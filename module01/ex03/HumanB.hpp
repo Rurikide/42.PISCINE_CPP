@@ -24,13 +24,13 @@ class HumanB {
 		Weapon*		_weapon;
 	
 	public:
-		HumanB( std::string name );
+		HumanB( const std::string name );
 		~HumanB( void );
 		
 		std::string	getName( void ) const;
 		Weapon*		getWeapon( void ) const;
 		void		setWeapon( Weapon& weapon );
-		void		attack( void );
+		void		attack( void ) const;
 };
 
 #endif
