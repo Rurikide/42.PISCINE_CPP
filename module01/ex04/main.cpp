@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:00:39 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/16 16:33:42 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:26:06 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,27 @@ int	main( int argc, char** argv )
 		std::cerr << AKAI << "Error: opening file" END_COLOR << std::endl;
 		return FAIL;
 	}
-	file.close();
-	std::string result_filename("sed_" + filename);
+	std::string result_filename(filename + ".replace");
 	std::ofstream result_file(result_filename.c_str());
 	if (result_file.is_open() == false)
 	{
 		std::cerr << AKAI "Error: unable to create file" END_COLOR << std::endl;
 		return FAIL;
 	}
-//	std::cout << result_filename << std::endl;
-
-
-/*-------------TESTING-------------*/
-//	std::cout << "filename: " << filename << " s1 " << s1 << " s2 " << s2 << std::endl;
-
+	for (std::string line; std::getline(file, line); )
+	{
+		int index = line.find(s1, 0);
+		while (index != FAIL)
+		{
+			line.erase(index, s1.length());
+			line.insert(index, s2);
+			index = index + s2.length();
+			index = line.find(s1, index);
+		}
+		result_file << line << std::endl;
+	}
+	file.close();
+	result_file.close();
 	return SUCCESS;
 }
 
