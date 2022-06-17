@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
+#include <string>	// .empty() .find(str, 0)  .erase(index, str.length) .insert(index, newstr)
+#include <fstream>	//. .open() .is_open() .close()
 #include "Define.hpp"
 
 
@@ -19,15 +20,22 @@ int	main( int argc, char** argv )
 {
 	if (argc != 4)
 	{
-		std::cerr << AKAI << "Error: enter 3 arguments: <filename> <s1> <s2>" END_COLOR << std::endl;
+		std::cerr << AKAI << "Error: enter: ./sed  <filename> <s1> <s2>" END_COLOR << std::endl;
 		return FAIL;
 	}
-	std::string filename = argv[1];
-	std::string s1 = argv[2];
-	std::string s2 = argv[3];
+	std::string filename(argv[1]); // equivalent to:  filename =  argv[1];
+	std::string s1(argv[2]);
+	std::string s2(argv[3]);
+
 	if (s1.empty() == true || s2.empty() == true)
 	{
 		std::cerr << AKAI "Error: cannot use empty strings" END_COLOR << std::endl;
+		return FAIL;
+	}
+	std::ifstream file(filename.c_str()); // file is an instance of the class ifstream
+	if (file.is_open() == false)
+	{
+		std::cerr << AKAI << "Error: the file doesn't exist" END_COLOR << std::endl;
 		return FAIL;
 	}
 
@@ -36,3 +44,13 @@ int	main( int argc, char** argv )
 
 	return SUCCESS;
 }
+
+// ifstream class constructor takes filename as a const char* rather than a c++ std::string
+// c_str() member function returns a const char * pointer to the string.
+
+// .open() opens or creates a file if it doesn't exist. .is_open() attemps to open the file
+
+// .find(str, 0) 0 is the position first character of the string, meaning searching for the whole str. .find return the index position
+
+// std::string::npos is a constant probably npos == -1, representing a non-position, returned by .find() when the pattern is not found
+
