@@ -6,7 +6,7 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/17 14:54:17 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/17 17:51:56 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS= main.cpp Harl.cpp 
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
