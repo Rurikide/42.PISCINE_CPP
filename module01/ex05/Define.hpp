@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   define.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 14:20:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/17 14:58:21 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/12 14:49:59 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/15 12:28:13 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "Zombie.hpp"
+#ifndef DEFINE_HPP
+#define DEFINE_HPP
 
-Zombie*	zombieHorde( int N, std::string name )
-{
-	if ( N < 1 || name.empty() == true)
-		return NULL;
+#define AKAI "\e[0;31m"
+#define KIIRO "\e[0;33m"
+#define MIDORI "\e[0;32m"
+#define SORAIRO "\e[0;36m"
+#define MURASAKI "\e[0;35m"
+#define END_COLOR "\e[0m"
 
-	Zombie*	horde = new Zombie[N];
-	
-	for (int i = 0; i < N; i++)
-		horde[i].setName(name);
-	return horde;
-}
+#define SUCCESS 0
+#define FAIL -1
+
+#endif

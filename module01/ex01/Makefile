@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/15 14:15:04 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/17 15:00:10 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= Zombie
+NAME= MoarBrainz
 
 CXX= clang++
 

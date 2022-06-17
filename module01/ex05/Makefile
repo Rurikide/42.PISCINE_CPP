@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/17 15:02:45 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/17 14:54:17 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= HiThisIsBrain
+NAME= harl
 
 CXX= clang++
 
@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp
+SRCS= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
@@ -43,4 +43,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all clean fclean re
+PHONY: all clean fclean re
