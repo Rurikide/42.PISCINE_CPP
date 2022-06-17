@@ -11,10 +11,9 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>	// .empty() .find(str, 0)  .erase(index, str.length) .insert(index, newstr)
+#include <string>	// .empty() .find(str, 0) .erase(index, str.length) .insert(index, newstr)
 #include <fstream>	//. .open() .is_open() .close()
 #include "Define.hpp"
-
 
 int	main( int argc, char** argv )
 {
@@ -26,21 +25,30 @@ int	main( int argc, char** argv )
 	std::string filename(argv[1]); // equivalent to:  filename =  argv[1];
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
-
 	if (s1.empty() == true || s2.empty() == true)
 	{
-		std::cerr << AKAI "Error: cannot use empty strings" END_COLOR << std::endl;
+		std::cerr << AKAI "Error: empty strings" END_COLOR << std::endl;
 		return FAIL;
 	}
 	std::ifstream file(filename.c_str()); // file is an instance of the class ifstream
 	if (file.is_open() == false)
 	{
-		std::cerr << AKAI << "Error: the file doesn't exist" END_COLOR << std::endl;
+		std::cerr << AKAI << "Error: opening file" END_COLOR << std::endl;
 		return FAIL;
 	}
+	file.close();
+	std::string result_filename("sed_" + filename);
+	std::ofstream result_file(result_filename.c_str());
+	if (result_file.is_open() == false)
+	{
+		std::cerr << AKAI "Error: unable to create file" END_COLOR << std::endl;
+		return FAIL;
+	}
+//	std::cout << result_filename << std::endl;
 
-	/*-------------TESTING-------------*/
-	std::cout << "filename: " << filename << " s1 " << s1 << " s2 " << s2 << std::endl;
+
+/*-------------TESTING-------------*/
+//	std::cout << "filename: " << filename << " s1 " << s1 << " s2 " << s2 << std::endl;
 
 	return SUCCESS;
 }
@@ -53,4 +61,3 @@ int	main( int argc, char** argv )
 // .find(str, 0) 0 is the position first character of the string, meaning searching for the whole str. .find return the index position
 
 // std::string::npos is a constant probably npos == -1, representing a non-position, returned by .find() when the pattern is not found
-
