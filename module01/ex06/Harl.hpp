@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 17:39:26 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/18 11:06:50 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/17 15:07:14 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/18 10:57:13 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Harl.hpp"
-#include "Define.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int	main( void )
-{
-	Harl harl;
+#include <string>
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
+class Harl {
 
-	return SUCCESS;
-}
+	private:
+		std::string trigger[4];
+
+		void	debug( void ) const;
+		void	info( void ) const;
+		void	warning( void ) const;
+		void	error( void ) const;
+
+	public:
+		Harl( void );
+		~Harl( void );
+
+		void	complain( std::string level );
+};
+
+#endif

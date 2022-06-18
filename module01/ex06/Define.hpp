@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   define.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 17:39:26 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/18 11:06:50 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/12 14:49:59 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/15 12:28:13 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Harl.hpp"
-#include "Define.hpp"
+#ifndef DEFINE_HPP
+#define DEFINE_HPP
 
-int	main( void )
-{
-	Harl harl;
+#define AKAI "\e[0;31m"
+#define KIIRO "\e[0;33m"
+#define MIDORI "\e[0;32m"
+#define SORAIRO "\e[0;36m"
+#define MURASAKI "\e[0;35m"
+#define END_COLOR "\e[0m"
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
+#define SUCCESS 0
+#define FAIL -1
 
-	return SUCCESS;
-}
+#endif
