@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/17 15:00:10 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/19 16:45:38 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= exo
+NAME= ex03
 
 CXX= clang++
 

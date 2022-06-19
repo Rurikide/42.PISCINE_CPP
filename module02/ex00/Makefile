@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/19 11:50:06 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/19 16:46:14 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= MyFirstCallInOCF
+NAME= ex00
 
 CXX= clang++
 
@@ -41,6 +41,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: clean all
+re: clean ex00
 
 .PHONY: all clean fclean re
