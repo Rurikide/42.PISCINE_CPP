@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 09:43:32 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/19 10:05:50 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/19 11:53:46 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class Fixed {
 		static const int	_fractionalBits; // important to initialize it in the .cpp
 		int					_value;
 	
-	public: //Orthodox Canonical Form
+	public: // Orthodox Canonical Form
 		Fixed( void ); // default constructor
-		Fixed( Fixed& const src ); // copy constructor
+		Fixed( Fixed const & src ); // copy constructor
 		~Fixed( void ); // destructor, no virtual yet in module02
-		Fixed& operator=( Fixed& const rhs);
+		Fixed& operator=( Fixed const & rhs ); // a copy  =assignment operator overload
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );	
