@@ -50,7 +50,14 @@ class Fixed {
 		Fixed	operator-( Fixed const & rhs ) const;
 		Fixed	operator*( Fixed const & rhs ) const;
 		Fixed	operator/( Fixed const & rhs ) const;
+		
+		// Two incrementation operators
+		Fixed&	operator++( void ); // pre ++_value;
+		Fixed	operator++( int ); // post _value++;
 
+		// Two decrementation operators
+		Fixed&	operator--( void ); // pre --_value;
+		Fixed	operator--( int ); // post _value--;
 };
 
 std::ostream& operator<<( std::ostream& s, Fixed const & value );

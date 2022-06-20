@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp
+SRCS= main.cpp Fixed.cpp
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
