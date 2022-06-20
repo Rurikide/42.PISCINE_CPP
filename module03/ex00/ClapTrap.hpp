@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 14:23:27 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 15:44:21 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ class ClapTrap {
 
 		ClapTrap& operator=( const ClapTrap& rhs );
 
-		void			attack(const std::string& target ) const;
+		void			attack( const std::string& target );
 		void			takeDamage( unsigned int amount );
 		void			beRepaired( unsigned int amount );
 
-		std::string		getName( void );
-		unsigned int	getHitPoint( void );
-		unsigned int	getEnergyPoint( void );
-		unsigned int	getAttackDamage( void );
+		std::string		getName( void ) const;
+		unsigned int	getHitPoint( void ) const;
+		unsigned int	getEnergyPoint( void ) const;
+		unsigned int	getAttackDamage( void ) const;
 };
 
 #endif
