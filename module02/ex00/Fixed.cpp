@@ -22,7 +22,7 @@ Fixed::Fixed( void ) : _value(0)
 
 Fixed::Fixed( Fixed const & src )
 {
-	std::cout << SORAIRO  "Copy constructor" END_COLOR << " called" << std::endl;
+	std::cout << MOMOIRO  "Copy constructor" END_COLOR << " called" << std::endl;
 	
 	*this = src; //dereferencing Fixed_this to Fixed_src
 }
@@ -44,7 +44,7 @@ Fixed&	Fixed::operator=( Fixed const & rhs )
 
 int	Fixed::getRawBits( void ) const
 {
-	std::cout << MURASAKI "getRawBits member function" END_COLOR << " called" << std::endl;
+	std::cout << SORAIRO "getRawBits member function" END_COLOR << " called" << std::endl;
 	
 	return this->_value;
 }
