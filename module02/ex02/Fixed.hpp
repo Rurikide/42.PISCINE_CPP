@@ -58,6 +58,13 @@ class Fixed {
 		// Two decrementation operators
 		Fixed&	operator--( void ); // pre --_value;
 		Fixed	operator--( int ); // post _value--;
+
+		// static public overloaded (non) member functions ; static member functions cannot have const qualifier...
+		static const Fixed&	max( Fixed const & fix1, Fixed const & fix2 )/*here*/;
+		static Fixed&	max( Fixed& fix1, Fixed& fix2 );
+		static const Fixed&	min( Fixed const & fix1, Fixed const & fix2 );
+		static Fixed&	min( Fixed& fix1, Fixed& fix2 );
+
 };
 
 std::ostream& operator<<( std::ostream& s, Fixed const & value );

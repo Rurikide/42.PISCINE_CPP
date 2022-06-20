@@ -129,3 +129,24 @@ Fixed	Fixed::operator--(int)
 	//std::cout << "post-decrement" << std::endl; 
 	Fixed post(*this); this->_value--; return post;
 }
+
+const Fixed&	Fixed::max( Fixed const & fix1, Fixed const & fix2 )
+{	
+	return fix1 >= fix2 ? fix1 : fix2;
+}
+
+Fixed&	Fixed::max( Fixed& fix1, Fixed& fix2 )
+{	
+	return fix1 >= fix2 ? fix1 : fix2;
+}
+
+const Fixed&	Fixed::min( Fixed const & fix1, Fixed const & fix2 )
+{
+	return fix1 <= fix2 ? fix1 : fix2;
+}
+
+Fixed&	Fixed::min( Fixed& fix1, Fixed& fix2 )
+{
+	return fix1 <= fix2 ? fix1 : fix2;
+}
+
