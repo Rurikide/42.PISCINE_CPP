@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 12:32:18 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:23:27 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ClapTrap {
 
 	public:
 		ClapTrap( void ); // This Default constructor could be set to private if I don't want a ClapTrap to be instantiated without parameters;
-		ClapTrap( const ClapTrap& src );
+		ClapTrap( const ClapTrap& rhs );
 		ClapTrap( const std::string& name );
 		~ClapTrap( void );
 
