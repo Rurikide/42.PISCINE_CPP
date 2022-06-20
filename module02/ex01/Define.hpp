@@ -13,7 +13,7 @@
 #ifndef DEFINE_HPP
 #define DEFINE_HPP
 
-#define AOI	"\e[0;34m"
+#define AOI "\e[0;34m"
 #define AKAI "\e[0;31m"
 #define KIIRO "\e[0;33m"
 #define MIDORI "\e[0;32m"
