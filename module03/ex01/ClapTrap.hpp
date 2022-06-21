@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:31:11 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:37:08 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class ClapTrap {
 
 	// now protected, so the derived instances of ClapTrap can inherit these next four formerly private attributes
 	protected:
-		std::string		_name;
-		unsigned int		_hitPoint;
-		unsigned int		_energyPoint;
-		unsigned int		_attackDamage;
+		std::string	_name;
+		unsigned int	_hitPoint;
+		unsigned int	_energyPoint;
+		unsigned int	_attackDamage;
 
 	public:
 		ClapTrap( const ClapTrap& rhs );
