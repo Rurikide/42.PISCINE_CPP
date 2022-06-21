@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:22:40 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/21 10:22:43 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:09:09 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@
 It is declared using the virtual keyword. 
 It is used to tell the compiler to perform dynamic linkage or late binding on the function. */
 
-class FragTrap : public ClapTrap { // public inheritance from base class ClapTrap
-
-	private:
-		FragTrap( void );
+class FragTrap : virtual public ClapTrap {
 
 	public:
+		FragTrap( void );
 		FragTrap( const FragTrap& rhs );
 		FragTrap( const std::string& name );
 		virtual ~FragTrap( void );

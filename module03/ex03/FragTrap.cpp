@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:22:52 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/21 10:22:54 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:00:49 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 FragTrap::FragTrap( void ) : ClapTrap()
 {
-    this->_name = "Nameless";
     this->_hitPoint = 100;
     this->_energyPoint = 100;
     this->_attackDamage = 30;

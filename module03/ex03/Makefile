@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/21 07:35:10 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/21 13:30:51 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= FragTrap
+NAME= DiamondTrap
 
 CXX= clang++
 
@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 

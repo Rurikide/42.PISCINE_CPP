@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:22:15 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/21 10:22:20 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:07:31 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 ScavTrap::ScavTrap( void ) : ClapTrap()
 {
-    this->_name = "Nameless";
     this->_hitPoint = 100;
     this->_energyPoint = 50;
     this->_attackDamage = 20;
@@ -68,11 +67,11 @@ ScavTrap&	ScavTrap::operator=( const ScavTrap& rhs )
 
 void	ScavTrap::attack( const std::string& target )
 {
-	if (this->getHitPoint() == 0) { std::cout << "ScavTrap "<< this->getName() << " cannot attack, because it fainted (0 HP)" << std::endl; return ; }
+	if (this->getHitPoint() == 0) { std::cout << this->getName() << " cannot attack, because it fainted (0 HP)" << std::endl; return ; }
 
-	if (this->getEnergyPoint() == 0) { std::cout << "ScavTrap " << this->getName() << " cannot attack, because has no more energy points left" << std::endl; return ; }
+	if (this->getEnergyPoint() == 0) { std::cout << this->getName() << " cannot attack, because has no more energy points left" << std::endl; return ; }
 
-	std::cout << "ScavTrap " << AKAI << this->getName() << END_COLOR << " spends 1 energy point to" << AKAI " punch in the face " END_COLOR << target << ", causing " << AKAI <<  this->getAttackDamage() << END_COLOR << " points of " << AKAI "damage!" END_COLOR << std::endl;
+	std::cout << AKAI << this->getName() << END_COLOR << " spends 1 energy point to" << AKAI " punch in the face " END_COLOR << target << ", causing " << AKAI <<  this->getAttackDamage() << END_COLOR << " points of " << AKAI "damage!" END_COLOR << std::endl;
 	this->_energyPoint = this->getEnergyPoint() - 1;
 
 	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
@@ -89,4 +88,9 @@ void		ScavTrap::guardGate( void )
 	this->_attackDamage = this->getAttackDamage() + 1;
 
 	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
+}
+
+void	ScavTrap::setEnergyPoint( void )
+{
+	this->_energyPoint = 50;
 }
