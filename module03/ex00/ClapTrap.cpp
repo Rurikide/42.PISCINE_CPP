@@ -61,7 +61,7 @@ void	ClapTrap::attack( const std::string& target )
 
 	if (this->getEnergyPoint() == 0) { std::cout << this->getName() << " cannot attack, because has no more energy points left" << std::endl; return ; }
 
-	std::cout << AKAI << this->getName() << END_COLOR << " spends 1 energy point to" << AKAI " attack " END_COLOR << target << "," << AKAI " causing " END_COLOR << this->getAttackDamage() << " points of " << AKAI "damage!" END_COLOR << std::endl;
+	std::cout << AKAI << this->getName() << END_COLOR << " spends 1 energy point to" << AKAI " attack " END_COLOR << target << ", causing " << AKAI <<  this->getAttackDamage() << END_COLOR << " points of " << AKAI "damage!" END_COLOR << std::endl;
 	this->_energyPoint = this->getEnergyPoint() - 1;
 
 	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
@@ -70,12 +70,14 @@ void	ClapTrap::attack( const std::string& target )
 void	ClapTrap::takeDamage( unsigned int amount )
 {
 	if (this->getHitPoint() == 0) { std::cout << this->getName() << " cannot take damage, because has already fallen. (0 HP)" << std::endl;	return ; }
-	
+
+	std::cout << this->getName() << " received " << amount << " HP damage!" << std::endl;
+
 	if (amount > this->getHitPoint())
 		amount = this->getHitPoint();
 
 	this->_hitPoint -= amount;
-	
+
 	std::cout << AKAI << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
 
 	if (this->getHitPoint() == 0) { std::cout << this->getName() << " has no more HP and just fainted..." << std::endl; return ; }
