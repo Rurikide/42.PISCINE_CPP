@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:43:22 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:33:30 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:36:33 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ void	ClapTrap::takeDamage( unsigned int amount )
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
-	if	(this->getHitPoint() == 0) { std::cout << this->getName() << " cannot repair itself, because it fainted (0 HP)" << std::endl; return ; }
-	if	(this->getEnergyPoint() == 0) { std::cout << this->getName() << " cannot repair itself, because has no more energy points left" << std::endl; return ; }
+	if (this->getHitPoint() == 0) { std::cout << this->getName() << " cannot repair itself, because it fainted (0 HP)" << std::endl; return ; }
+	if (this->getEnergyPoint() == 0) { std::cout << this->getName() << " cannot repair itself, because has no more energy points left" << std::endl; return ; }
 
 	this->_hitPoint += amount;
 	this->_energyPoint -= 1;
