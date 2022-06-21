@@ -71,7 +71,7 @@ void	ClapTrap::takeDamage( unsigned int amount )
 {
 	if (this->getHitPoint() == 0) { std::cout << this->getName() << " cannot take damage, because has already fallen. (0 HP)" << std::endl;	return ; }
 
-	std::cout << this->getName() << " received " << amount << " HP damage!" << std::endl;
+	std::cout << this->getName() << " received " << AKAI << amount << " damage!" << END_COLOR << std::endl;
 
 	if (amount > this->getHitPoint())
 		amount = this->getHitPoint();
@@ -90,7 +90,7 @@ void	ClapTrap::beRepaired( unsigned int amount )
 
 	this->_hitPoint += amount;
 	this->_energyPoint -= 1;
-	std::cout << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to " << SORAIRO "repair itself" END_COLOR << ". " << SORAIRO "Gaining " END_COLOR << amount << " HP" << std::endl;
+	std::cout << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to " << SORAIRO "repair itself" END_COLOR << ". " << "Gaining " << SORAIRO << amount << END_COLOR << " HP" << std::endl;
 	std::cout << SORAIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
 
 }
