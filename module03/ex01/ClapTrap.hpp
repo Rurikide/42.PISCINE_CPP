@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:25:04 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:31:11 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ClapTrap {
 
 	// now protected, so the derived instances of ClapTrap can inherit these next four formerly private attributes
 	protected:
-		std::string			_name;
+		std::string		_name;
 		unsigned int		_hitPoint;
 		unsigned int		_energyPoint;
 		unsigned int		_attackDamage;
@@ -38,11 +38,11 @@ class ClapTrap {
 
 		ClapTrap& operator=( const ClapTrap& rhs );
 
-		virtual void			attack( const std::string& target ); // Virtual because the subject specifies this attack() prints different messages, from the attack() in ScavTrap
-		void				takeDamage( unsigned int amount );
-		void				beRepaired( unsigned int amount );
+		virtual void	attack( const std::string& target ); // Virtual because the subject specifies this attack() prints different messages, from the attack() in ScavTrap
+		void		takeDamage( unsigned int amount );
+		void		beRepaired( unsigned int amount );
 
-		std::string		getName( void ) const;
+		std::string	getName( void ) const;
 		unsigned int	getHitPoint( void ) const;
 		unsigned int	getEnergyPoint( void ) const;
 		unsigned int	getAttackDamage( void ) const;
