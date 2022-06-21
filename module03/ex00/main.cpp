@@ -21,6 +21,37 @@ int	main( void )
 	gicollette.attack(badbadia.getName());
 	badbadia.takeDamage(gicollette.getAttackDamage());
 	
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+	
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+	
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.beRepaired(59);
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+	
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+	
+	gicollette.beRepaired(31);
+
 	badbadia.attack(gicollette.getName());
 	gicollette.takeDamage(badbadia.getAttackDamage());
 
