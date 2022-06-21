@@ -22,3 +22,5 @@ class ScavTrap : public ClapTrap { // public inheritance from base class ClapTra
 
 		void		guardGate( void );
 };
+
+#endif

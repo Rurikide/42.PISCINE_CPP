@@ -35,5 +35,43 @@ ScavTrap::ScavTrap( const ScavTrap& rhs ) : ClapTrap(rhs.getName()) // to trigge
 
 ScavTrap::~ScavTrap( void )
 {
-	std::cout << AKAI << "ScavTrap " << this->getName() << " is put down by ScavTrap destructor" << END_COLOR << std::endl;
+	std::cout << AKAI << "ScavTrap " << this->getName() << " is destroyed by ScavTrap destructor and is now a ClapTrap" << END_COLOR << std::endl;
+}
+
+/*--------------------Copy-Assignment-Operator-------------------*/
+
+ScavTrap&	ScavTrap::operator=( const ScavTrap& rhs )
+{
+	this->_name = rhs.getName();
+	this->_hitPoint = rhs.getHitPoint();
+	this->_energyPoint = rhs.getEnergyPoint();
+	this->_attackDamage = rhs.getAttackDamage();
+
+	return	*this;
+}
+
+/*---------------------Public-Member-Functions-------------------*/
+
+void	ScavTrap::attack( const std::string& target )
+{
+	if (this->getHitPoint() == 0) { std::cout << "ScavTrap "<< this->getName() << " cannot attack, because it fainted (0 HP)" << std::endl; return ; }
+
+	if (this->getEnergyPoint() == 0) { std::cout << "ScavTrap " << this->getName() << " cannot attack, because has no more energy points left" << std::endl; return ; }
+
+	std::cout << "ScavTrap " << AKAI << this->getName() << END_COLOR << " spends 1 energy point to" << AKAI " attack " END_COLOR << target << ", causing " << AKAI <<  this->getAttackDamage() << END_COLOR << " points of " << AKAI "damage!" END_COLOR << std::endl;
+	this->_energyPoint = this->getEnergyPoint() - 1;
+
+	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
+}
+
+void		ScavTrap::guardGate( void )
+{
+    if (this->getHitPoint() == 0) { std::cout << "ScavTrap "<< this->getName() << " cannot use special ability , because it fainted (0 HP)" << std::endl; return ; }
+
+	if (this->getEnergyPoint() == 0) { std::cout << "ScavTrap " << this->getName() << " cannot use special ability, because has no more energy points left" << std::endl; return ; }
+
+	std::cout << "ScavTrap " << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to activate " << SORAIRO << "special ability: guard gate!" << END_COLOR << std::endl;
+	this->_energyPoint = this->getEnergyPoint() - 1;
+
+	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
 }

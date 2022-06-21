@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:44 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:59:18 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/21 00:00:53 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,51 +16,51 @@ int	main( void )
 
 {
 	ClapTrap gicollette("Gicollette");
-	ClapTrap badbadia("Badbadia");
+	ScavTrap badbadia("Badbadia");
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
+
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
 
 	gicollette.attack(badbadia.getName());
 	badbadia.takeDamage(gicollette.getAttackDamage());
 	
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
 
-	badbadia.attack(gicollette.getName());	
-	gicollette.takeDamage(1);
-
-	badbadia.attack(gicollette.getName());	
-	gicollette.takeDamage(1);
+	gicollette.attack(badbadia.getName());
+	badbadia.takeDamage(gicollette.getAttackDamage());
 
 	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
+	gicollette.takeDamage(badbadia.getAttackDamage());
 
-	ClapTrap twin(badbadia);
-
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-	
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-	
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-	
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
 
 	gicollette.beRepaired(2);
 	badbadia.beRepaired(2);
 
-	twin.beRepaired(5);
 
-
+	badbadia.guardGate();
+	
+	
 	return SUCCESS;
 }
