@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:54:46 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 23:05:48 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ It is used to tell the compiler to perform dynamic linkage or late binding on th
 
 class ClapTrap {
 
-	private:
-		ClapTrap( void ); // I decided to put the Default constructor private, so we cannot instanciate a ClapTrap without parameters
-
 	// now protected, so the derived instances of ClapTrap can inherit these next four formerly private attributes
 	protected:
 		std::string	_name;
@@ -34,6 +31,7 @@ class ClapTrap {
 		unsigned int	_attackDamage;
 
 	public:
+		ClapTrap( void ); // can't be private, since needed by ScavTrap Default constructor
 		ClapTrap( const ClapTrap& rhs );
 		ClapTrap( const std::string& name );
 		virtual ~ClapTrap( void ); // now respects the Orthodox Canonical Form with the virtual keyword
