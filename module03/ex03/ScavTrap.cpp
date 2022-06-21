@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:22:15 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/21 14:07:31 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:25:14 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,11 @@ void	ScavTrap::attack( const std::string& target )
 
 void		ScavTrap::guardGate( void )
 {
-    if (this->getHitPoint() == 0) { std::cout << "ScavTrap "<< this->getName() << " cannot use special ability , because it fainted (0 HP)" << std::endl; return ; }
+    if (this->getHitPoint() == 0) { std::cout << this->getName() << " cannot use special ability , because it fainted (0 HP)" << std::endl; return ; }
 
-	if (this->getEnergyPoint() == 0) { std::cout << "ScavTrap " << this->getName() << " cannot use special ability, because has no more energy points left" << std::endl; return ; }
+	if (this->getEnergyPoint() == 0) { std::cout << this->getName() << " cannot use special ability, because has no more energy points left" << std::endl; return ; }
 
-	std::cout << "ScavTrap " << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to activate " << SORAIRO << "special ability: guard gate! Gate keeper mode! Generating 1AP" << END_COLOR << std::endl;
+	std::cout << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to activate " << SORAIRO << "special ability: guard gate! Gate keeper mode! Generating 1AP" << END_COLOR << std::endl;
 	this->_energyPoint = this->getEnergyPoint() - 1;
 	this->_attackDamage = this->getAttackDamage() + 1;
 

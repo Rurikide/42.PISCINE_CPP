@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:22:52 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/21 14:00:49 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:26:08 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ FragTrap&	FragTrap::operator=( const FragTrap& rhs )
 
 void	FragTrap::attack( const std::string& target )
 {
-	if (this->getHitPoint() == 0) { std::cout << "FragTrap "<< this->getName() << " cannot attack, because it fainted (0 HP)" << std::endl; return ; }
+	if (this->getHitPoint() == 0) { std::cout << this->getName() << " cannot attack, because it fainted (0 HP)" << std::endl; return ; }
 
-	if (this->getEnergyPoint() == 0) { std::cout << "FragTrap " << this->getName() << " cannot attack, because has no more energy points left" << std::endl; return ; }
+	if (this->getEnergyPoint() == 0) { std::cout << this->getName() << " cannot attack, because has no more energy points left" << std::endl; return ; }
 
 	std::cout << "FragTrap " << AKAI << this->getName() << END_COLOR << " spends 1 energy point to" << AKAI " burn with a flamethrower " END_COLOR << target << ", causing " << AKAI <<  this->getAttackDamage() << END_COLOR << " points of " << AKAI "damage!" END_COLOR << std::endl;
 	this->_energyPoint = this->getEnergyPoint() - 1;
@@ -79,11 +79,11 @@ void	FragTrap::attack( const std::string& target )
 
 void		FragTrap::highFivesGuys( void )
 {
-    if (this->getHitPoint() == 0) { std::cout << "FragTrap "<< this->getName() << " cannot use special ability , because it fainted (0 HP)" << std::endl; return ; }
+    if (this->getHitPoint() == 0) { std::cout << this->getName() << " cannot use special ability , because it fainted (0 HP)" << std::endl; return ; }
 
-	if (this->getEnergyPoint() == 0) { std::cout << "FragTrap " << this->getName() << " cannot use special ability, because has no more energy points left" << std::endl; return ; }
+	if (this->getEnergyPoint() == 0) { std::cout << this->getName() << " cannot use special ability, because has no more energy points left" << std::endl; return ; }
 
-	std::cout << "FragTrap " << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to activate " << SORAIRO << "special ability: highFivesGuys! Generating 5 positive energy points!" << END_COLOR << std::endl;
+	std::cout << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to activate " << SORAIRO << "special ability: highFivesGuys! Generating 5 positive energy points!" << END_COLOR << std::endl;
 	this->_energyPoint = this->getEnergyPoint() + 5;
 
 	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
