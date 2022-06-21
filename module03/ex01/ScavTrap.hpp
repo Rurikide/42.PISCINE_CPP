@@ -8,8 +8,10 @@ It is used to tell the compiler to perform dynamic linkage or late binding on th
 
 class ScavTrap : public ClapTrap { // public inheritance from base class ClapTrap
 
-	public:
+	private:
 		ScavTrap( void );
+
+	public:
 		ScavTrap( const ScavTrap& rhs );
 		ScavTrap( const std::string& name );
 		virtual ~ScavTrap( void );
@@ -18,5 +20,5 @@ class ScavTrap : public ClapTrap { // public inheritance from base class ClapTra
 
 		virtual void	attack( const std::string& target );
 
-		void			guardGate( void );
+		void		guardGate( void );
 };
