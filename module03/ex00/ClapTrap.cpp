@@ -18,7 +18,7 @@ ClapTrap::ClapTrap( void ) : _name("Nameless"), _hitPoint(10), _energyPoint(10),
 {
 	std::cout << MIDORI << this->getName() << " ClapTrap created in Default constructor" << END_COLOR << std::endl;
 
-	std::cout << SHIROIOOI << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
+	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
 }
 
 ClapTrap::ClapTrap( const std::string& name ) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
@@ -30,10 +30,10 @@ ClapTrap::ClapTrap( const std::string& name ) : _name(name), _hitPoint(10), _ene
 
 ClapTrap::ClapTrap( const ClapTrap& rhs )
 {
-	std::cout << SORAIRO << "This newly instanciated" << END_COLOR << " ClapTrap becomes " << SORAIRO << rhs.getName() << END_COLOR << " ClapTrap in Copy constructor" << std::endl;
+	std::cout << MURASAKI << "This newly instanciated" << END_COLOR << " ClapTrap becomes a replica of " << MURASAKI << rhs.getName() << END_COLOR << " ClapTrap using Copy constructor" << std::endl;
 	 *this = rhs;
 
-	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
+	std::cout << MURASAKI << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
 }
 
 ClapTrap::~ClapTrap( void )

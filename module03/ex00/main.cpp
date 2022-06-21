@@ -23,28 +23,45 @@ int	main( void )
 	badbadia.takeDamage(gicollette.getAttackDamage());
 	
 	badbadia.attack(gicollette.getName());
-	
 	gicollette.takeDamage(1);
-	badbadia.attack(gicollette.getName());	
-	gicollette.takeDamage(1);
-	badbadia.attack(gicollette.getName());
 
 	badbadia.attack(gicollette.getName());	
 	gicollette.takeDamage(1);
+
+	badbadia.attack(gicollette.getName());	
+	gicollette.takeDamage(1);
+
 	badbadia.attack(gicollette.getName());
 	gicollette.takeDamage(1);
-	badbadia.attack(gicollette.getName());
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-	badbadia.attack(gicollette.getName());
-	gicollette.takeDamage(1);
-	gicollette.beRepaired(2);
+
 	ClapTrap twin(badbadia);
+
+	badbadia.attack(gicollette.getName());
+	gicollette.takeDamage(1);
+
+	badbadia.attack(gicollette.getName());
+	gicollette.takeDamage(1);
+	
+	badbadia.attack(gicollette.getName());
+	gicollette.takeDamage(1);
+	
+	badbadia.attack(gicollette.getName());
+	gicollette.takeDamage(1);
+	
+	badbadia.attack(gicollette.getName());
+	gicollette.takeDamage(1);
+
+	badbadia.attack(gicollette.getName());
+	gicollette.takeDamage(1);
+
+	badbadia.attack(gicollette.getName());
+	gicollette.takeDamage(1);
+
+	gicollette.beRepaired(2);
+	badbadia.beRepaired(2);
+
+	twin.beRepaired(5);
+
+
 	return SUCCESS;
 }
