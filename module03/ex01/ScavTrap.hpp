@@ -1,6 +1,6 @@
 #ifndef SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+#include "ClapTrap.hpp" // includes <iostream> <string> "Define.hpp"
 
 /* A C++ virtual function is a member function in the base class that you redefine in a derived class. 
 It is declared using the virtual keyword. 

@@ -6,14 +6,16 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:37:08 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:54:46 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-#include <iostream>
+#include <iostream> // std::cout
+#include <string> // std::string
+#include "Define.hpp"
 
 /* A C++ virtual function is a member function in the base class that you redefine in a derived class. 
 It is declared using the virtual keyword. 

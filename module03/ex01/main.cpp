@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:44 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 18:36:13 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:59:18 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp" // includes "ClapTrap.hpp", which includes <iostream> <string> "Define.hpp"
 
 int	main( void )
 
 {
-	ClapTrap nameless;
 	ClapTrap gicollette("Gicollette");
 	ClapTrap badbadia("Badbadia");
 

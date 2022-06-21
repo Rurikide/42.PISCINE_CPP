@@ -6,14 +6,15 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:35:49 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:52:54 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-#include <iostream>
+#include <iostream> // std::cout
+#include <string> //std::string
 #include "Define.hpp"
 
 class ClapTrap {

@@ -6,12 +6,11 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:43:22 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:36:33 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:56:07 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "Define.hpp"
+#include "ClapTrap.hpp" // includes <iostream> <string> "Define.hpp"
 
 /*--------------------Constructors-Destructor-------------------*/
 
