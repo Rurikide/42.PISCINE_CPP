@@ -6,12 +6,12 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:44 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/21 07:45:55 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/21 10:35:29 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp" // includes "ClapTrap.hpp", which includes <string>
-#include "FragTrap.hpp" // includes "ClapTrap.hpp", which includes <string>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include "Define.hpp"
 
 int	main( void )
