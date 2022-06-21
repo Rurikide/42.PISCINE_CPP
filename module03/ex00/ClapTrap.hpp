@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:24:04 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 22:34:31 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:35:49 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 class ClapTrap {
 
 	private:
-		std::string		_name;
-		unsigned int		_hitPoint;
-		unsigned int		_energyPoint;
-		unsigned int		_attackDamage;
+		std::string	_name;
+		unsigned int	_hitPoint;
+		unsigned int	_energyPoint;
+		unsigned int	_attackDamage;
 
 	public:
 		ClapTrap( void ); // This Default constructor could be set to private if I don't want a ClapTrap to be instantiated without parameters;
