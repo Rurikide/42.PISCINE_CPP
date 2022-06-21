@@ -69,11 +69,8 @@ void	ClapTrap::attack( const std::string& target )
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (this->getHitPoint() == 0)
-	{
-		std::cout << this->getName() << " cannot take damage, because has already fallen. (0 HP)" << std::endl;	
-		return ;
-	}
+	if (this->getHitPoint() == 0) { std::cout << this->getName() << " cannot take damage, because has already fallen. (0 HP)" << std::endl;	return ; }
+	
 	if (amount > this->getHitPoint())
 		amount = this->getHitPoint();
 
@@ -81,8 +78,7 @@ void	ClapTrap::takeDamage( unsigned int amount )
 	
 	std::cout << AKAI << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
 
-	if (this->getHitPoint() == 0)
-	{ std::cout << this->getName() << " has no more HP and just fainted..." << std::endl; return ; }
+	if (this->getHitPoint() == 0) { std::cout << this->getName() << " has no more HP and just fainted..." << std::endl; return ; }
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
