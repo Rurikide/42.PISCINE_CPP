@@ -58,7 +58,7 @@ void	ScavTrap::attack( const std::string& target )
 
 	if (this->getEnergyPoint() == 0) { std::cout << "ScavTrap " << this->getName() << " cannot attack, because has no more energy points left" << std::endl; return ; }
 
-	std::cout << "ScavTrap " << AKAI << this->getName() << END_COLOR << " spends 1 energy point to" << AKAI " attack " END_COLOR << target << ", causing " << AKAI <<  this->getAttackDamage() << END_COLOR << " points of " << AKAI "damage!" END_COLOR << std::endl;
+	std::cout << "ScavTrap " << AKAI << this->getName() << END_COLOR << " spends 1 energy point to" << AKAI " punch in the face " END_COLOR << target << ", causing " << AKAI <<  this->getAttackDamage() << END_COLOR << " points of " << AKAI "damage!" END_COLOR << std::endl;
 	this->_energyPoint = this->getEnergyPoint() - 1;
 
 	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
@@ -70,7 +70,7 @@ void		ScavTrap::guardGate( void )
 
 	if (this->getEnergyPoint() == 0) { std::cout << "ScavTrap " << this->getName() << " cannot use special ability, because has no more energy points left" << std::endl; return ; }
 
-	std::cout << "ScavTrap " << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to activate " << SORAIRO << "special ability: guard gate!" << END_COLOR << std::endl;
+	std::cout << "ScavTrap " << SORAIRO << this->getName() << END_COLOR << " spends 1 energy point to activate " << SORAIRO << "special ability: guard gate! Gate keeper mode!" << END_COLOR << std::endl;
 	this->_energyPoint = this->getEnergyPoint() - 1;
 
 	std::cout << KIIRO << this->getName() << " HP: " << this->getHitPoint() << " / EP: " << this->getEnergyPoint() << " / AP: " << this->getAttackDamage() << END_COLOR << std::endl;
