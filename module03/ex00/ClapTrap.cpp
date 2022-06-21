@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:43:22 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/20 18:37:03 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:34:15 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,9 @@ void	ClapTrap::beRepaired( unsigned int amount )
 
 std::string	ClapTrap::getName( void ) const { return this->_name;}
 
-unsigned int ClapTrap::getHitPoint( void ) const { return this->_hitPoint; }
+unsigned int	ClapTrap::getHitPoint( void ) const { return this->_hitPoint; }
 
-unsigned int ClapTrap::getEnergyPoint( void ) const { return this->_energyPoint; }
+unsigned int	ClapTrap::getEnergyPoint( void ) const { return this->_energyPoint; }
 
-unsigned int ClapTrap::getAttackDamage( void ) const { return this->_attackDamage; }
+unsigned int	ClapTrap::getAttackDamage( void ) const { return this->_attackDamage; }
 
