@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:19:41 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 10:26:22 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 10:38:34 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	main( void )
 {
-	Animal bobby = Dog();
+	Animal a;
 		
 	return SUCCESS;
 }

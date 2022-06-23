@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:20:05 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 10:24:36 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 10:32:45 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::Dog( void ) : Animal()
 	this->_type = "Dog";
 }
 
-Dog::Dog( const Dog& rhs ) : Animal()
+Dog::Dog( const Dog& rhs ) : Animal(rhs)
 {
 	std::cout << AIZOME << "Dog Copy Constructor" << END_COLOR << std::endl;
 	*this = rhs;
