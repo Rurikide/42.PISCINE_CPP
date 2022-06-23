@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:20:46 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/22 13:43:21 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 10:03:25 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Dog : public Animal {
 	public:
 		Dog( void );
 		Dog( const Dog& rhs );
-		Dog( const std::string type );
 		virtual ~Dog( void );
 
 		Dog& operator=( const Dog& rhs );

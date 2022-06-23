@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:14:38 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/22 13:34:09 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 09:13:05 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Animal {
 		Animal& operator=( const Animal& rhs );
 
 		std::string	getType( void ) const;
-		virtual void	setType( const std::string type);
+		void	setType( const std::string type);
 		virtual void	makeSound( void ) const;
 };
 

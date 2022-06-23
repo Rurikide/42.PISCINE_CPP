@@ -6,17 +6,17 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:21:57 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/22 13:44:23 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 09:57:54 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Animal.hpp" // includes <string
 #include "define.hpp"
 #include <iostream>
 
 /*---------------------------CONSTRUCTORS-DESTRUCTOR---------------------------*/
 
-Animal::Animal( void ) : _type("Dog")
+Animal::Animal( void ) : _type("Animal")
 {
 	std::cout << MIDORI << "Animal Default Constructor" << END_COLOR << std::endl
 }
@@ -56,8 +56,8 @@ void	Animal::setType( const std::string type ) { this->_type = type; }
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-virtual void	Animal::makeSound( void ) const
+void	Animal::makeSound( void ) const
 {
-	std::cout << MIDORI << "*indiscernible animal noise*" << END_COLOR :: std::endl;
+	std::cout << MIDORI << "*indiscernible animal noise*" << END_COLOR << std::endl;
 }
 
