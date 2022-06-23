@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:21:57 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 09:57:54 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 10:45:27 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 Animal::Animal( void ) : _type("Animal")
 {
-	std::cout << MIDORI << "Animal Default Constructor" << END_COLOR << std::endl
+	std::cout << MIDORI << "Animal Default Constructor" << END_COLOR << std::endl;
 }
 
 Animal::Animal( const Animal& rhs )
@@ -48,7 +48,7 @@ Animal& Animal::operator=( const Animal& rhs )
 
 /*-----------------------------------GETTERS-----------------------------------*/
 
-std::string	Animal::getType( void ) const { return this->_type }
+std::string	Animal::getType( void ) const { return this->_type; }
 
 /*-----------------------------------SETTERS-----------------------------------*/
 

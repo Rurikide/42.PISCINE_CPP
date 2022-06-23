@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 14:49:59 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 09:26:24 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 10:54:52 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define AOI "\e[0;34m"
 #define AKAI "\e[0;31m"
 #define KIIRO "\e[0;33m"
-#define AIZOME "\e[1;94m"
+#define AIZOME "\e[0;49;34m"
 #define MIDORI  "\e[0;32m"
 #define SORAIRO  "\e[0;36m"
 #define MOMOIRO   "\e[0;35m"
