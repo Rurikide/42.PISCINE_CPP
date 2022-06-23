@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:20:05 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 15:58:44 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 18:37:42 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Dog::Dog( void ) : Animal(), _brain(new Brain())
 	this->_type = "Dog";
 }
 
-Dog::Dog( const Dog& rhs ) : Animal(rhs), _brain(new Brain()) // brain
+Dog::Dog( const Dog& rhs ) : Animal(rhs), _brain(new Brain( *rhs._brain)) // brain
 {
 	std::cout << AIZOME << "Dog Copy Constructor, deepcopying Brain" << END_COLOR << std::endl;
 	//*this = rhs; // dog

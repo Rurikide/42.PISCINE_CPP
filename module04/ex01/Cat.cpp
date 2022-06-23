@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:20:05 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 15:59:25 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 18:39:58 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cat::Cat( void ) : Animal(), _brain(new Brain())
 	this->_type = "Cat";
 }
 
-Cat::Cat( const Cat& rhs ) : Animal(rhs), _brain(new Brain()) // brain
+Cat::Cat( const Cat& rhs ) : Animal(rhs), _brain(new Brain(*rhs._brain)) // brain
 {
 	std::cout << KIIRO << "Cat Copy Constructor, deepcopying Brain" << END_COLOR << std::endl;
 	//*this = rhs; // cat

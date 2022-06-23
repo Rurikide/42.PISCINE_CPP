@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:19:41 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 16:48:42 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 18:49:31 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,24 @@ int	main( void )
 	Cat garfield;
 
 	garfield.getBrain()->setIdeas("lasagna");
-
-	std::cout << KIIRO << "Garfield " << END_COLOR << std::endl; 
+	std::cout << MOMOIRO << "Garfield " << END_COLOR << std::endl; 
 	garfield.getBrain()->printIdeas();
+
+	Cat* pooky = new Cat(garfield);
+	std::cout << MOMOIRO << "Pooky " << END_COLOR << std::endl; 
+	pooky->getBrain()->printIdeas();
+	delete pooky;
+
+Dog beethoven;
 	
+	beethoven.getBrain()->setIdeas("attack cat");
+	
+	std::cout << AIZOME << "Beethoven " << END_COLOR << std::endl;
+	beethoven.getBrain()->printIdeas();
+
+	Dog fido = beethoven;
+
+	fido.getBrain()->printIdeas();
 
 	return SUCCESS;
 }
