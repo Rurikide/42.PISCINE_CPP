@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:20:05 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 19:15:35 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 19:13:16 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-#include "Dog.hpp"
+#include "Cat.hpp"
 #include "define.hpp"
 #include <iostream>
 
 /*---------------------------CONSTRUCTORS-DESTRUCTOR--------------------------*/
 
-Dog::Dog( void ) : Animal(), _brain(new Brain())
+Cat::Cat( void ) : Animal(), _brain(new Brain())
 {
-	std::cout << AIZOME << "Dog Default Constructor, using new for Brain" << END_COLOR << std::endl;
-	this->_type = "Dog";
+	std::cout << KIIRO << "Cat Default Constructor, using new for Brain" << END_COLOR << std::endl;
+	this->_type = "Cat";
 }
 
-Dog::Dog( const Dog& rhs ) : Animal(rhs), _brain(new Brain( *rhs._brain)) // brain
+Cat::Cat( const Cat& rhs ) : Animal(rhs), _brain(new Brain(*rhs._brain)) // brain
 {
-	std::cout << AIZOME << "Dog Copy Constructor, deepcopying Brain" << END_COLOR << std::endl;
-	//*this = rhs; // dog
+	std::cout << KIIRO << "Cat Copy Constructor, deepcopying Brain" << END_COLOR << std::endl;
+	//*this = rhs; // cat
 }
 
-Dog::~Dog( void )
+Cat::~Cat( void )
 {
-	std::cout << AIZOME << "Dog Destructor, also deleting Brain" << END_COLOR << std::endl;
+	std::cout << KIIRO << "Cat Destructor, also deleting Brain" << END_COLOR << std::endl;
 	delete _brain;
 }
 
 /*-----------------------------OPERATORS-OVERLOADS-----------------------------*/
 
-Dog& Dog::operator=( const Dog& rhs )
+Cat& Cat::operator=( const Cat& rhs )
 {
 	this->_type = rhs.getType();
 
@@ -46,12 +46,12 @@ Dog& Dog::operator=( const Dog& rhs )
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-void	Dog::makeSound( void ) const
+void	Cat::makeSound( void ) const
 {
-	std::cout << AIZOME << "woof woof" << END_COLOR << std::endl;
+	std::cout << KIIRO << "meow meow" << END_COLOR << std::endl;
 }
 
-Brain*	Dog::getBrain( void )
+Brain*	Cat::getBrain( void )
 {
 	return this->_brain;
 }

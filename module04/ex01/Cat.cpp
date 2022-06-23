@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:20:05 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 18:39:58 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 19:15:05 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Cat::Cat( const Cat& rhs ) : Animal(rhs), _brain(new Brain(*rhs._brain)) // brai
 
 Cat::~Cat( void )
 {
-	std::cout << KIIRO << "Cat Destructor, deleting Brain" << END_COLOR << std::endl;
+	std::cout << KIIRO << "Cat Destructor, also deleting Brain" << END_COLOR << std::endl;
 	delete _brain;
 }
 

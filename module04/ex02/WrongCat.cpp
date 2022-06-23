@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:20:05 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 19:15:35 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/23 12:05:31 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include "Dog.hpp"
+#include "WrongCat.hpp" // includes WrongAnimal.hpp: <string.hpp>
 #include "define.hpp"
 #include <iostream>
 
 /*---------------------------CONSTRUCTORS-DESTRUCTOR--------------------------*/
 
-Dog::Dog( void ) : Animal(), _brain(new Brain())
+WrongCat::WrongCat( void ) : WrongAnimal()
 {
-	std::cout << AIZOME << "Dog Default Constructor, using new for Brain" << END_COLOR << std::endl;
-	this->_type = "Dog";
+	std::cout << AKAI << "WrongCat Default Constructor" << END_COLOR << std::endl;
+	this->_type = "WrongCat";
 }
 
-Dog::Dog( const Dog& rhs ) : Animal(rhs), _brain(new Brain( *rhs._brain)) // brain
+WrongCat::WrongCat( const WrongCat& rhs ) : WrongAnimal()
 {
-	std::cout << AIZOME << "Dog Copy Constructor, deepcopying Brain" << END_COLOR << std::endl;
-	//*this = rhs; // dog
+	std::cout << AKAI << "WrongCat Copy Constructor" << END_COLOR << std::endl;
+	*this = rhs;
 }
 
-Dog::~Dog( void )
+WrongCat::~WrongCat( void )
 {
-	std::cout << AIZOME << "Dog Destructor, also deleting Brain" << END_COLOR << std::endl;
-	delete _brain;
+	std::cout << AKAI << "WrongCat Destructor" << END_COLOR << std::endl;
 }
 
 /*-----------------------------OPERATORS-OVERLOADS-----------------------------*/
 
-Dog& Dog::operator=( const Dog& rhs )
+WrongCat& WrongCat::operator=( const WrongCat& rhs )
 {
 	this->_type = rhs.getType();
 
@@ -46,12 +44,7 @@ Dog& Dog::operator=( const Dog& rhs )
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-void	Dog::makeSound( void ) const
+void	WrongCat::makeSound( void ) const
 {
-	std::cout << AIZOME << "woof woof" << END_COLOR << std::endl;
-}
-
-Brain*	Dog::getBrain( void )
-{
-	return this->_brain;
+	std::cout << AKAI << "mooooooooo!" << END_COLOR << std::endl;
 }
