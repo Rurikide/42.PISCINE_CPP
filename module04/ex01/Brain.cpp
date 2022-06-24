@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 14:01:09 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 18:35:57 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 14:33:47 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ Brain& Brain::operator=( const Brain& rhs )
 	std::cout << "inside operator=" << std::endl;
 	for (size_t nb = 0; nb < CAPACITY; nb++)
 		this->_ideas[nb] = rhs.getIdea(nb); //deepcopy (by value, not by address)
+
+	// shallow copy version : this->_ideas = rhs.ideas; ERROR!
+	
 	return *this;
 }
 

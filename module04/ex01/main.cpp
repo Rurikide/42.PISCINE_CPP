@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:19:41 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/23 18:49:31 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 14:54:27 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	main( void )
 	std::cout << MOMOIRO << "Garfield " << END_COLOR << std::endl; 
 	garfield.getBrain()->printIdeas();
 
-	Cat* pooky = new Cat(garfield);
+	Cat pooky = garfield;
 	std::cout << MOMOIRO << "Pooky " << END_COLOR << std::endl; 
-	pooky->getBrain()->printIdeas();
-	delete pooky;
+	pooky.getBrain()->printIdeas();
+
 
 Dog beethoven;
 	

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 11:32:05 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 13:23:32 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/24 13:15:14 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/24 13:15:28 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ AMateria&	AMateria::operator=( const AMateria& rhs )
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-const std::string&	AMateria::getType( void ) const
+const std::string&	AM::getType( void ) const
 {
 	return this->_type;
 }
