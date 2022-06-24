@@ -1,53 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 15:32:29 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 15:32:34 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/24 15:35:11 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/24 15:39:37 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp" // includes <string> classses Cure, AMateria, ICharacter
+#include "Ice.hpp" // includes <string> classses Ice, AMateria, ICharacter
 #include "ICharacter.hpp" // member functions: .getName() .equip(AMateria* m), .unequip(int idx), .use(int idx, ICharacter& target)
 #include "Define.hpp"
 #include <iostream>
 
 /*---------------------------CONSTRUCTORS-DESTRUCTOR---------------------------*/
 
-Cure::Cure( void ) _type("cure")
+Ice::Ice( void ) _type("ice")
 {
-	std::cout << "Cure Default Constructor" << std::endl;
+	std::cout << "Ice Default Constructor" << std::endl;
 }
 
-Cure::Cure( const Cure& rhs )
+Ice::Ice( const Ice& rhs )
 {
-	std::cout << "Cure Copy Constructor" << std::endl;
+	std::cout << "Ice Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
-Cure::~Cure( void )
+Ice::~Ice( void )
 {
-	std::cout << "Cure Destructor" << std::endl;
+	std::cout << "Ice Destructor" << std::endl;
 }
 
 /*-----------------------------OPERATORS-OVERLOADS-----------------------------*/
 
-Cure&	Cure::operator=( const Cure& rhs )
+Ice&	Ice::operator=( const Ice& rhs )
 {
 	this->_type = rhs._type; return *this;
 }
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-Cure*	Cure::clone( void ) const
+Ice*	Ice::clone( void ) const
 {
-	return new Cure(*this); // where should I put delete???
+	return new Ice(*this); // where should I put delete???
 }
 
-void	Cure::use( ICharacter& target )
+void	Ice::use( ICharacter& target )
 {
-	std::cout << "* heals " << KIIRO << target.getName() << END_COLOR << "'s wounds *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << KIIRO << target.getName() << END_COLOR << " *" << std::endl;
 }

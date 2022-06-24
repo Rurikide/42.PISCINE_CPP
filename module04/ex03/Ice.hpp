@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 12:38:15 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 15:34:47 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/06/24 15:33:21 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/06/24 15:34:31 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
 #include "AMateria.hpp" // <string> classes AMateria ICharacter
 
 class ICharacter;
 
-class Cure : public AMateria {
+class Ice : public AMateria {
 
 	public:
-		Cure( void );
-		Cure( const Cure& rhs );
-		virtual ~Cure( void );
+		Ice( void );
+		Ice( const Ice& rhs );
+		virtual ~Ice( void );
 
-		Cure& operator=( const Cure& rhs );
+		Ice& operator=( const Ice& rhs );
 
-		virtual Cure* clone( void ) const;
+		virtual Ice* clone( void ) const;
 		virtual void	use(ICharacter& target);
 
 };

@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 11:32:05 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 13:23:32 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:14:29 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ const std::string&	AMateria::getType( void ) const
 
 void	AMateria::use( ICharacter& target )
 {
-	// Ice: "* shoots an ice bolt at <name> *"
-	// Cure: "* heals <name>'s wounds *"
-	// target.getName()
+	// does nothing, since AMateria is an abstract class, not instantiable
+	(void)target;
 }
