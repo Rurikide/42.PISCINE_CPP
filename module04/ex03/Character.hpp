@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 16:08:58 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 18:20:15 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 20:14:40 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 
 #define SLOTS 4
 
-class Character {
-	private:
-		Character( void ); // Default Constructor
+class Character : public ICharacter {
 
+	private:
 		std::string _name;
 		AMateria	_inventory[SLOTS];
 
 	public:
+		Character( void ); // Default Constructor
 		Character( const Character& rhs ); // Copy Constructor
 		Character( const std::string& name ); // Name Constructor
 		virtual ~Character( void );
