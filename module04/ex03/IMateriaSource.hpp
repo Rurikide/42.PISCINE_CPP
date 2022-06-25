@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 18:21:28 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 18:26:23 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 22:04:26 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class IMateriaSource {
 	
 	public:
-		virtual ~IMateriaSource( void );
+		virtual ~IMateriaSource( void ) {};
 		virtual void	learnMateria( AMateria* ) = 0;
 		virtual AMateria*	createMateria( const std::string& type ) = 0;
 };
