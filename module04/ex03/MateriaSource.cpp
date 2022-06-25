@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 18:31:55 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 19:56:50 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 22:13:24 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,10 @@ AMateria*	MateriaSource::createMateria( const std::string& type )
 {
 	for (int idx = 0; idx < CAPACITY; idx++)
 	{
-		if (this->_box[idx]->getType() == type)
+		if (this->_box[idx] && this->_box[idx]->getType() == type)
 		{
-			std::cout << "Successfully created a materia " << this->_box[idx]->getType() << std::endl;
+			
+			std::cout << "MateriaSource successfully created a materia " << this->_box[idx]->getType() << std::endl;
 			return this->_box[idx]->clone();
 		}
 	}

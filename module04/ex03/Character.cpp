@@ -73,6 +73,13 @@ const std::string&	Character::getName( void ) const
 void	Character::equip( AMateria* m )
 {
 	int idx = 0;
+
+	if (m == NULL) // meaning createMateria didn't work, so cannot equip, otherwise segfault
+	{
+		std::cout << MURASAKI "no materia to equip" END_COLOR << std::endl;
+		return ;
+	}
+
 	while (idx < SLOTS)
 	{
 		if (this->_inventory[idx] == NULL)
@@ -83,7 +90,10 @@ void	Character::equip( AMateria* m )
 		idx++;
 	}
 	if (idx >= SLOTS)
+	{
 		std::cout << "inventory full, couldn't equip the materia " << m->getType() << std::endl;
+		release(&m);
+	}
 	else
 		std::cout << "successfully equiped the materia " << m->getType() << " in slot #" << idx << std::endl;
 }
@@ -91,12 +101,14 @@ void	Character::equip( AMateria* m )
 void	Character::unequip( int idx )
 {
 	if (idx >= SLOTS)
+	{
+		std::cout << MURASAKI "no slot #" << idx << END_COLOR << std::endl;
 		return ;
-	
-	// HOW TO REMEMBER THE ADDRESS OF THE UNEQUIPED MATERIA???
+	}
 	if (this->_inventory[idx] != NULL)
 	{
 		std::cout << "unequiped the materia " << this->_inventory[idx]->getType() << " in slot #" << idx << std::endl;
+		release(&this->_inventory[idx]);
 		this->_inventory[idx] = NULL;
 	}
 	else
@@ -106,13 +118,23 @@ void	Character::unequip( int idx )
 void	Character::use( int idx, ICharacter& target )
 {
 		if (idx >= SLOTS)
+		{
+			std::cout << MURASAKI "no slot #" << idx << END_COLOR << std::endl;
 			return ;
+		}
 
 		if (this->_inventory[idx] == NULL)
 			std::cout << "use action failed, since no materia equiped in slot #" << idx << std::endl;
 		else
 		{
+			std::cout << SORAIRO << "[" << this->getName() << "]" << END_COLOR;
 			this->_inventory[idx]->use(target);
 		}
 
+}
+
+void	Character::release( AMateria** m )
+{
+	delete *m;
+	*m = NULL;
 }

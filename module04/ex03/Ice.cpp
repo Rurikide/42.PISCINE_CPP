@@ -44,7 +44,7 @@ Ice&	Ice::operator=( const Ice& rhs )
 
 AMateria*	Ice::clone( void ) const
 {
-	return new Ice(*this); // where should I put delete???
+	return new Ice(); 
 }
 
 void	Ice::use( ICharacter& target )

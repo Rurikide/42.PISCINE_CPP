@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:32:29 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 21:36:39 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 22:07:25 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 /*---------------------------CONSTRUCTORS-DESTRUCTOR---------------------------*/
 
-Cure::Cure( void ) 
+Cure::Cure( void ) : AMateria("cure")
 {
 	std::cout << "Cure Default Constructor" << std::endl;
 }
@@ -44,7 +44,7 @@ Cure&	Cure::operator=( const Cure& rhs )
 
 AMateria*	Cure::clone( void ) const
 {
-	return new Cure(*this); // where should I put delete???
+	return new Cure(); 
 }
 
 void	Cure::use( ICharacter& target )
