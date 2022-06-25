@@ -22,7 +22,7 @@ class MateriaSource : public IMateriaSource {
 	
 	private:
 		//std::string _spellBook[CAPACITY] doesn't work
-		AMateria	_box[CAPACITY];
+		AMateria*	_box[CAPACITY];
 
 	public:
 		MateriaSource( void ); 

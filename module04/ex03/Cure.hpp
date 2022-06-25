@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:38:15 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 15:34:47 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 21:36:28 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cure : public AMateria {
 
 		Cure& operator=( const Cure& rhs );
 
-		virtual Cure* clone( void ) const;
+		virtual AMateria* clone( void ) const;
 		virtual void	use(ICharacter& target);
 
 };

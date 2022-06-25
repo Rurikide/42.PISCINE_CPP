@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 16:10:06 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 18:19:51 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 21:49:45 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ICharacter.hpp" 
 #include "Character.hpp" // includes /<string> classes Character, ICharacter
 #include "AMateria.hpp"
 #include "define.hpp"
@@ -57,27 +58,29 @@ Character&	Character::operator=( const Character& rhs )
 		delete this->_inventory[idx];
 
 	for (int idx = 0; idx < SLOTS; idx++)
-		this->_inventory[idx] = rhs._inventory[idx]
+		this->_inventory[idx] = rhs._inventory[idx];
 	
 	return *this;
 }
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-const std::string&	getName( void ) const
+const std::string&	Character::getName( void ) const
 {
 	return this->_name;
 }
 
-void	equip( AMateria* m )
+void	Character::equip( AMateria* m )
 {
-	for (int idx = 0; idx < SLOTS; idx++)
+	int idx = 0;
+	while (idx < SLOTS)
 	{
 		if (this->_inventory[idx] == NULL)
 		{
 			this->_inventory[idx] = m;
 			break ;
 		}
+		idx++;
 	}
 	if (idx >= SLOTS)
 		std::cout << "inventory full, couldn't equip the materia " << m->getType() << std::endl;
@@ -85,7 +88,7 @@ void	equip( AMateria* m )
 		std::cout << "successfully equiped the materia " << m->getType() << " in slot #" << idx << std::endl;
 }
 
-void	unequip( int idx )
+void	Character::unequip( int idx )
 {
 	if (idx >= SLOTS)
 		return ;
@@ -100,13 +103,16 @@ void	unequip( int idx )
 		std::cout << "unequip action failed, since no materia found in slot #" << idx << std::endl;
 }
 
-void	use( int idx, ICharacter& target )
+void	Character::use( int idx, ICharacter& target )
 {
+		if (idx >= SLOTS)
+			return ;
+
 		if (this->_inventory[idx] == NULL)
 			std::cout << "use action failed, since no materia equiped in slot #" << idx << std::endl;
 		else
 		{
-			this->_inventory[idx]->use(target.getName());
+			this->_inventory[idx]->use(target);
 		}
 
 }

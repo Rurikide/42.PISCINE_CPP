@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:33:21 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 15:34:31 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 21:36:05 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Ice : public AMateria {
 
 		Ice& operator=( const Ice& rhs );
 
-		virtual Ice* clone( void ) const;
+		virtual AMateria* clone( void ) const;
 		virtual void	use(ICharacter& target);
 
 };

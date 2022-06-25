@@ -21,7 +21,7 @@ class Character : public ICharacter {
 
 	private:
 		std::string _name;
-		AMateria	_inventory[SLOTS];
+		AMateria*	_inventory[SLOTS];
 
 	public:
 		Character( void ); // Default Constructor

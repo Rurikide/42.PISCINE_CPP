@@ -12,12 +12,12 @@
 
 #include "AMateria.hpp" // includes <string>
 #include "ICharacter.hpp" // member functions: .getName() .equip(AMateria* m), .unequip(int idx), .use(int idx, ICharacter& target)
-#include "Define.hpp"
+#include "define.hpp"
 #include <iostream>
 
 /*---------------------------CONSTRUCTORS-DESTRUCTOR---------------------------*/
 
-AMateria::AMateria( void ) _type(NULL)
+AMateria::AMateria( void ) : _type(NULL)
 {
 	std::cout << "AMateria Default Constructor" << std::endl;
 }

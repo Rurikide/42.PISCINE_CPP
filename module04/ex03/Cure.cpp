@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:32:29 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 15:32:34 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 21:36:39 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp" // includes <string> classses Cure, AMateria, ICharacter
 #include "ICharacter.hpp" // member functions: .getName() .equip(AMateria* m), .unequip(int idx), .use(int idx, ICharacter& target)
-#include "Define.hpp"
+#include "define.hpp"
 #include <iostream>
 
 /*---------------------------CONSTRUCTORS-DESTRUCTOR---------------------------*/
 
-Cure::Cure( void ) _type("cure")
+Cure::Cure( void ) 
 {
 	std::cout << "Cure Default Constructor" << std::endl;
 }
@@ -42,7 +42,7 @@ Cure&	Cure::operator=( const Cure& rhs )
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-Cure*	Cure::clone( void ) const
+AMateria*	Cure::clone( void ) const
 {
 	return new Cure(*this); // where should I put delete???
 }

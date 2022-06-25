@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp" // includes /<string> classes IMateriaSource, MateriaSource, AMateria
-#include "AMateria.hpp"
 #include "define.hpp"
 #include <iostream>
 
@@ -48,22 +47,25 @@ MateriaSource&	MateriaSource::operator=( const MateriaSource& rhs )
 		delete this->_box[idx];
 
 	for (int idx = 0; idx < CAPACITY; idx++)
-		this->_box[idx] = rhs._box[idx]
+		this->_box[idx] = rhs._box[idx];
 	
 	return *this;
 }
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-void	learnMateria( AMateria* m )
+void	MateriaSource::learnMateria( AMateria* m )
 {
-	for (int idx = 0; idx < CAPACITY; idx++)
+	int idx = 0;
+
+	while (idx < CAPACITY)
 	{
 		if (this->_box[idx] == NULL)
 		{
 			this->_box[idx] = m;
 			break ;
 		}
+		idx++;
 	}
 	if (idx >= CAPACITY)
 	{
@@ -74,14 +76,14 @@ void	learnMateria( AMateria* m )
 		std::cout << "MateriaSource successfully learned the materia " << m->getType() << std::endl; 
 }
 
-AMateria*	createMateria( const std::string& type )
+AMateria*	MateriaSource::createMateria( const std::string& type )
 {
 	for (int idx = 0; idx < CAPACITY; idx++)
 	{
-		if (this->_box[idx].getType() == type)
+		if (this->_box[idx]->getType() == type)
 		{
-			std::cout << "Successfully created a materia " << this->_box[idx].getType() << std::endl;
-			return this->_box[idx].clone();
+			std::cout << "Successfully created a materia " << this->_box[idx]->getType() << std::endl;
+			return this->_box[idx]->clone();
 		}
 	}
 	return NULL;

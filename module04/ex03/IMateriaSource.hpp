@@ -14,8 +14,7 @@
 #define IMATERIASOURCE_HPP
 
 #include <string>
-
-class AMateria;
+#include "AMateria.hpp"
 
 class IMateriaSource {
 	

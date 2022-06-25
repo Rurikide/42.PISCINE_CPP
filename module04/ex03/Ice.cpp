@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:35:11 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 15:39:37 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/24 21:36:17 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp" // includes <string> classses Ice, AMateria, ICharacter
 #include "ICharacter.hpp" // member functions: .getName() .equip(AMateria* m), .unequip(int idx), .use(int idx, ICharacter& target)
-#include "Define.hpp"
+#include "define.hpp"
 #include <iostream>
 
 /*---------------------------CONSTRUCTORS-DESTRUCTOR---------------------------*/
 
-Ice::Ice( void ) _type("ice")
+Ice::Ice( void ) : AMateria("ice")
 {
 	std::cout << "Ice Default Constructor" << std::endl;
 }
@@ -42,7 +42,7 @@ Ice&	Ice::operator=( const Ice& rhs )
 
 /*----------------------------OTHER-MEMBER-FUNCTIONS---------------------------*/
 
-Ice*	Ice::clone( void ) const
+AMateria*	Ice::clone( void ) const
 {
 	return new Ice(*this); // where should I put delete???
 }
