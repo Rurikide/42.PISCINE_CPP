@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 19:19:22 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 22:16:09 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:16:27 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "MateriaSource.hpp"
@@ -31,6 +31,7 @@ int	main( void )
 	ICharacter* me = new Character("me");
 
 	AMateria* tmp;
+//	me->equip(tmp);
 
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
