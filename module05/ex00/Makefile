@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/23 11:58:02 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/27 13:46:18 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= Polymorphism
+NAME= Bureaucrat
 
 CXX= clang++
 
@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS= main.cpp Bureaucrat.cpp 
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
