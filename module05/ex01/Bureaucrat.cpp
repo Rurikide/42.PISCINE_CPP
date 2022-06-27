@@ -6,13 +6,15 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:11:11 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 14:17:47 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:34:37 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "define.hpp"
+#include "Form.hpp"
 #include <iostream>
+
 
 /*----------------------------CONSTRUCTORS-DESTRUCTOR----------------------------*/
 
@@ -100,6 +102,18 @@ void	Bureaucrat::checkGrade( void )
 	{
 		std::cout << e.what() << std::endl;
 	}
+}
+
+void	Bureaucrat::signForm( const Form& form ) const
+{
+	if (this->grade_ <= form.getSignatureGrade() && form.formIsSigned() == true)
+		std::cout << this->name_ << " signed the form " << form.getName() << std::endl;
+	else if (form.formIsOutOfBound() == true)
+		std::cout << "No one could sign the form " << form.getName() << " since it has invalid grade requirements" << std::endl;
+	else if (this->grade_ <= form.getSignatureGrade() && form.formIsSigned() == false)
+		std::cout << this->name_ << " has a grade high enough to sign  the form " << form.getName() << " but didn't sign it yet" << std::endl;
+	else
+		std::cout << this->name_ << " couldn't sign the form " << form.getName() << " because its Bureaucrat level is too low" << std::endl; 
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

@@ -6,11 +6,11 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:31 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 14:20:51 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:33:55 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include "define.hpp"
 #include <iostream>
 
@@ -23,19 +23,28 @@ int	main(void)
 	Bureaucrat mondello = Bureaucrat("Mondello", 3);
 	Bureaucrat chalifour = Bureaucrat("Chalifour", 100);
 
-	tom.getDemoted();
-	isa.getPromoted();
-	so.getPromoted();
-	cori.getDemoted();
-	mondello.getPromoted();
-	chalifour.getDemoted();
+	Form zero("Zero", 0, 0);
+	Form one("One", 1, 1);
+	Form fortyTwo("FortyTwo", 42, 42);
+	Form basis("Basis", 150, 150);
+	Form error("Error", 151, 151);
 
-	std::cout << tom << std::endl;
-	std::cout << isa << std::endl;
-	std::cout << so << std::endl;
-	std::cout << cori << std::endl;
-	std::cout << mondello << std::endl;
-	std::cout << chalifour << std::endl;
+	zero.beSigned(isa);
+
+	one.beSigned(isa);
+	one.beSigned(cori);
+
+	fortyTwo.beSigned(isa);
+	fortyTwo.beSigned(so);
+
+
+	basis.beSigned(isa);
+	basis.beSigned(cori);
+
+	isa.signForm(zero);
+	isa.signForm(fortyTwo);
+	cori.signForm(fortyTwo);
+
 
 	return SUCCESS;
 }
