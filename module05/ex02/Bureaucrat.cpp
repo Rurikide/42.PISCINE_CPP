@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:11:11 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/28 15:37:38 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:59:08 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,18 +90,14 @@ void	Bureaucrat::getDemoted( void )
 
 void	Bureaucrat::checkGrade( void )
 {
-	try
+	if (this->grade_ < HIGH || this->grade_ > LOW)
 	{
-		if (this->grade_ < HIGH || this->grade_ > LOW)
-		{
-			this->grade_ = 42;
-			throw Bureaucrat::GradeInvalidException();
-		}
+		throw Bureaucrat::GradeInvalidException();
 	}
-	catch (Bureaucrat::GradeInvalidException& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	//catch (Bureaucrat::GradeInvalidException& e)
+	//{
+	//	std::cout << e.what() << std::endl;
+	//}
 }
 
 void	Bureaucrat::signForm( const Form& form ) const
@@ -153,7 +149,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 const char* Bureaucrat::GradeInvalidException::what() const throw()
 {
-	return "Grade is out of range. Setting it to grade 42";
+	return "Grade is out of range";
 }
 
 const char* Bureaucrat::ImposteurException::what() const throw()

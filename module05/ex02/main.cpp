@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:31 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/28 15:54:03 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:22:09 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,40 +20,38 @@
 
 int	main(void)
 {
-	Bureaucrat isa;
-	Bureaucrat tom;
-	Bureaucrat so;
-	Bureaucrat cori;
-	Bureaucrat max;
-
 	try
 	{
-		isa = Bureaucrat("Isabelle", 1);
-		tom = Bureaucrat("Tom", 42);
-		so = Bureaucrat("Sophie", 75);
-		cori = Bureaucrat("Cori", 145);
-		max = Bureaucrat("Maxime", 151);
+		Bureaucrat isa = Bureaucrat("Isabelle", 1);
+		Bureaucrat tom = Bureaucrat("Tom", 42);
+		Bureaucrat so = Bureaucrat("Sophie", 75);
+		Bureaucrat cori = Bureaucrat("Cori", 145);
+		Bureaucrat max = Bureaucrat("Maxime", 151);
 	}
-	catch
+	catch (Bureaucrat::GradeInvalidException& e)
 	{
-
+		std::cout << e.what() << std::endl;
 	}
 
-	
+	Bureaucrat isa = Bureaucrat("Isabelle", 1);
+	Bureaucrat tom = Bureaucrat("Tom", 42);
+	Bureaucrat so = Bureaucrat("Sophie", 75);
+	Bureaucrat cori = Bureaucrat("Cori", 145);
+	Bureaucrat max = Bureaucrat("Maxime", 150);
+
 	ShrubberyCreationForm s1 = ShrubberyCreationForm("sa");
 	ShrubberyCreationForm s2 = ShrubberyCreationForm("sb");
 	ShrubberyCreationForm s3 = ShrubberyCreationForm("sc");
 
 	s1.beSigned(isa);
-	s1.execute(so);
 	cori.executeForm(s1);
 
 
-	//s2.beSigned(max);
-	//s2.execute(max);
+	s2.beSigned(max);
+	s2.execute(max);
 
-	//s3.beSigned(tom);
-	//s3.execute(cori);
+	s3.beSigned(tom);
+	s3.execute(cori);
 
 	return SUCCESS;
 }
