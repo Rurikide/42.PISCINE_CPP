@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 12:10:33 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/28 14:34:01 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:52:21 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,27 +45,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=( const ShrubberyCreation
 
 void	ShrubberyCreationForm::execute( const Bureaucrat& executor ) const
 {
-	try
-	{
-		if (this->formIsSigned() == false)
-			throw Form::NotSignedException();
-	}
-	catch (Form::NotSignedException& e)
-	{
-		std::cout << AKAI << e.what() << END_COLOR << std::endl;
-		return ;
-	}
-	try
-	{
-		if (executor.getGrade() > this->getExecutionGrade())
-			throw Form::GradeExecuteTooLow();
-	}
-	catch (Form::GradeExecuteTooLow& e)
-	{
-		std::cout << MIDORI << executor.getName() << END_COLOR << AKAI << e.what() << END_COLOR << std::endl;
-		return ;
-	}
-
+	if (this->formIsSigned() == false)
+		throw Form::NotSignedException();
+	if (executor.getGrade() > this->getExecutionGrade())
+		throw Form::GradeExecuteTooLow();
 	std::ofstream file((getTarget() + "_shrubbery").c_str());
 	if (file.is_open())
 	{

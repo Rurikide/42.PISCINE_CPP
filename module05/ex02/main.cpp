@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:31 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/28 16:22:09 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:47:00 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ int	main(void)
 	ShrubberyCreationForm s2 = ShrubberyCreationForm("sb");
 	ShrubberyCreationForm s3 = ShrubberyCreationForm("sc");
 
-	s1.beSigned(isa);
+	isa.signForm(s1);
 	cori.executeForm(s1);
 
 
-	s2.beSigned(max);
-	s2.execute(max);
+	max.signForm(s2);
+	max.executeForm(s2);
 
-	s3.beSigned(tom);
-	s3.execute(cori);
+	isa.signForm(s3);
+	tom.executeForm(s3);
 
 	return SUCCESS;
 }

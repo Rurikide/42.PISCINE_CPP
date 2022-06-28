@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 10:47:29 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/28 13:59:50 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:30:05 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 
 class ShrubberyCreationForm : public Form
 {
-	public:
+	private:
 		ShrubberyCreationForm( void );
+
+	public:
 		ShrubberyCreationForm( const ShrubberyCreationForm& rhs );
 		ShrubberyCreationForm( const std::string& target );
 		virtual ~ShrubberyCreationForm( void );
