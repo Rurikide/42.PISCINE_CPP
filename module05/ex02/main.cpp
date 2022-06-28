@@ -6,50 +6,54 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:31 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 18:33:55 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:54:03 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "define.hpp"
 #include <iostream>
 
+// ShrubberyCreationForm signature 145, execute 137
+// RobotomyRequestForm	signature 72, execute 45
+// PresidentialPardonForm signature 25, execute 5
+
 int	main(void)
 {
-	Bureaucrat tom = Bureaucrat("Tom", 0);
-	Bureaucrat isa  = Bureaucrat("Isabelle", 1);
-	Bureaucrat so = Bureaucrat("Sophie", 2);
-	Bureaucrat cori = Bureaucrat("Cori", 150);
+	Bureaucrat isa;
+	Bureaucrat tom;
+	Bureaucrat so;
+	Bureaucrat cori;
+	Bureaucrat max;
 
-	Form zero("Zero", 0, 0);
-	Form one("One", 1, 1);
-	Form fortyTwo("FortyTwo", 42, 42);
-	Form basis("Basis", 150, 150);
-	Form error("Error", 151, 151);
+	try
+	{
+		isa = Bureaucrat("Isabelle", 1);
+		tom = Bureaucrat("Tom", 42);
+		so = Bureaucrat("Sophie", 75);
+		cori = Bureaucrat("Cori", 145);
+		max = Bureaucrat("Maxime", 151);
+	}
+	catch
+	{
 
+	}
 
-	zero.beSigned(isa);
-	isa.signForm(zero);
+	
+	ShrubberyCreationForm s1 = ShrubberyCreationForm("sa");
+	ShrubberyCreationForm s2 = ShrubberyCreationForm("sb");
+	ShrubberyCreationForm s3 = ShrubberyCreationForm("sc");
 
-	one.beSigned(isa);
-	isa.signForm(one);
-
-	so.signForm(fortyTwo);
-
-	fortyTwo.beSigned(tom);
-	fortyTwo.beSigned(isa);
-
-	tom.signForm(fortyTwo);
-	isa.signForm(fortyTwo);
-	so.signForm(fortyTwo);
-
-	basis.beSigned(cori);
-	so.signForm(basis);
+	s1.beSigned(isa);
+	s1.execute(so);
+	cori.executeForm(s1);
 
 
+	//s2.beSigned(max);
+	//s2.execute(max);
 
-//	error.beSigned(cori);
-//	cori.signForm(error);
+	//s3.beSigned(tom);
+	//s3.execute(cori);
 
 	return SUCCESS;
 }

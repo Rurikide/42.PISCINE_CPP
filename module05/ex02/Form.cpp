@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:20:18 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 18:27:41 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 14:51:36 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Form::Form( const std::string& name, const std::string& target, const size_t sig
 	this->checkGrade();
 }
 
-Form::Form( const Form& rhs ) : name_(rhs.getName()), target_(rhs.getTarget(), signatureGrade_(rhs.getSignatureGrade()), executionGrade_(rhs.getExecutionGrade())
+Form::Form( const Form& rhs ) : name_(rhs.getName()), target_(rhs.getTarget()), signatureGrade_(rhs.getSignatureGrade()), executionGrade_(rhs.getExecutionGrade())
 {
 	std::cout << "Form Copy Constructor" << std::endl;
 	*this = rhs;
@@ -160,6 +160,11 @@ const char*	Form::GradeSignatureTooLow::what() const throw()
 	return " cannot sign this form, because its bureaucrat grade is too low";
 }
 
+const char*	Form::GradeExecuteTooLow::what() const throw() 
+{
+	return " cannot execute this form, because its bureaucrat grade is too low";
+}
+
 const char*	Form::GradeInvalidException::what() const throw() // for Bureaucrat.signForm()
 {
 	return "This form cannot be signed, since it has invalid grade level";
@@ -170,9 +175,14 @@ const char*	Form::AlreadySignedException::what() const throw()
 	return ", because it has already been signed";
 }
 
+const char*	Form::NotSignedException::what() const throw()
+{
+	return "Cannot execute, because the form is not signed";
+}
+
 std::ostream& operator<<( std::ostream& s, const Form& rhs )
 {
-	s << "[] Name fo the form: " << rhs.getName() << " | isSigned: " << (rhs.formIsSigned() ? "yes" : "no") << " | signatureGrade: " << rhs.getSignatureGrade() << " | executionGrade: " << rhs.getExecutionGrade() << " []" << std::endl;
+	s << "[] Name of the form: " << rhs.getName() << " | Target: " << rhs.getTarget() << " | isSigned: " << (rhs.formIsSigned() ? "yes" : "no") << " | signatureGrade: " << rhs.getSignatureGrade() << " | executionGrade: " << rhs.getExecutionGrade() << " []" << std::endl;
 
 	return s;
 }

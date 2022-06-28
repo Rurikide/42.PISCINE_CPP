@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:11:11 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 18:34:37 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:37:38 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	Bureaucrat::signForm( const Form& form ) const
 		}
 		catch (Bureaucrat::ImposteurException& e)
 		{
-		std::cout << MIDORI << this->name_ << END_COLOR << AKAI << e.what() << END_COLOR << SORAIRO << form.getName() << END_COLOR << ". " << MIDORI << form.getSignature() << END_COLOR << " did." << std::endl; return ;
+			std::cout << MIDORI << this->name_ << END_COLOR << AKAI << e.what() << END_COLOR << SORAIRO << form.getName() << END_COLOR << ". " << MIDORI << form.getSignature() << END_COLOR << " did." << std::endl; return ;
 		}
 
 		std::cout << MIDORI << this->name_ << END_COLOR << " signed the form " << SORAIRO << form.getName() << END_COLOR << std::endl;
@@ -127,6 +127,19 @@ void	Bureaucrat::signForm( const Form& form ) const
 	else
 		std::cout << MIDORI << this->name_ << END_COLOR << AKAI << " couldn't sign the form " << END_COLOR << SORAIRO << form.getName() << END_COLOR << AKAI << " because its bureaucrat grade is too low" << END_COLOR << std::endl; 
 }
+
+void	Bureaucrat::executeForm( const Form& form ) const
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {

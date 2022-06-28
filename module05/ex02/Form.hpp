@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:26:34 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 18:07:45 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 14:41:44 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Form {
 		const size_t		executionGrade_;
 
 	public:
-		Form( const std::string& name, const size_t signatureGrade, const size_t executionGrade );
+		Form( const std::string& name, const std::string& target, const size_t signatureGrade, const size_t executionGrade );
 		Form( const Form& rhs );
 		~Form( void );
 
@@ -45,7 +45,7 @@ class Form {
 		void			beSigned( const Bureaucrat& bureaucrat );
 		void			checkGrade	( void );
 		
-		// The base class Form is now an  abstract class!
+		// The base class Form is now an abstract class!
 		virtual void	execute( const Bureaucrat& executor ) const = 0;
 
 		class GradeTooHighException : public std::exception
@@ -60,11 +60,19 @@ class Form {
 		{
 			public: virtual const char* what() const throw();
 		};
+		class GradeExecuteTooLow : public std::exception
+		{
+			public: virtual const char* what() const throw();
+		};
 		class GradeInvalidException : public std::exception
 		{
 			public: virtual const char* what() const throw();
 		};
 		class AlreadySignedException : public std::exception
+		{
+			public: virtual const char* what() const throw();
+		};
+		class NotSignedException : public std::exception
 		{
 			public: virtual const char* what() const throw();
 		};
