@@ -107,13 +107,25 @@ void	Bureaucrat::checkGrade( void )
 void	Bureaucrat::signForm( const Form& form ) const
 {
 	if (this->grade_ <= form.getSignatureGrade() && form.formIsSigned() == true)
-		std::cout << this->name_ << " signed the form " << form.getName() << std::endl;
+	{
+		try
+		{
+			if (this->name_ != form.getSignature())
+				throw Bureaucrat::ImposteurException();
+		}
+		catch (Bureaucrat::ImposteurException& e)
+		{
+		std::cout << MIDORI << this->name_ << END_COLOR << AKAI << e.what() << END_COLOR << SORAIRO << form.getName() << END_COLOR << ". " << MIDORI << form.getSignature() << END_COLOR << " did." << std::endl; return ;
+		}
+
+		std::cout << MIDORI << this->name_ << END_COLOR << " signed the form " << SORAIRO << form.getName() << END_COLOR << std::endl;
+	}
 	else if (form.formIsOutOfBound() == true)
-		std::cout << "No one could sign the form " << form.getName() << " since it has invalid grade requirements" << std::endl;
+		std::cout << AKAI << "Nobody could sign the form " << END_COLOR << SORAIRO << form.getName() << END_COLOR << AKAI <<  " since it has invalid grade requirements" << END_COLOR << std::endl;
 	else if (this->grade_ <= form.getSignatureGrade() && form.formIsSigned() == false)
-		std::cout << this->name_ << " has a grade high enough to sign  the form " << form.getName() << " but didn't sign it yet" << std::endl;
+		std::cout << MIDORI << this->name_ << END_COLOR << " has a grade high enough to sign the form " << SORAIRO << form.getName() << END_COLOR << " but didn't sign it yet" << std::endl;
 	else
-		std::cout << this->name_ << " couldn't sign the form " << form.getName() << " because its Bureaucrat level is too low" << std::endl; 
+		std::cout << MIDORI << this->name_ << END_COLOR << AKAI << " couldn't sign the form " << END_COLOR << SORAIRO << form.getName() << END_COLOR << AKAI << " because its bureaucrat grade is too low" << END_COLOR << std::endl; 
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
@@ -129,6 +141,11 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 const char* Bureaucrat::GradeInvalidException::what() const throw()
 {
 	return "Grade is out of range. Setting it to grade 42";
+}
+
+const char* Bureaucrat::ImposteurException::what() const throw()
+{
+	return " didn't sign the form ";
 }
 
 std::ostream& operator<<( std::ostream& s, const Bureaucrat& rhs )

@@ -22,7 +22,8 @@ Form::Form( void ) : name_("Blank"), signatureGrade_(1), executionGrade_(1)
 Form::Form( const std::string& name, const size_t signatureGrade, const size_t executionGrade ) : name_(name),  signatureGrade_(signatureGrade), executionGrade_(executionGrade)
 {
 	std::cout << "Form Attributes Setting Constructor" << std::endl;
-	
+
+	this->signedBy_ = "";
 	this->isSigned_ = false;
 	this->isOutOfBound_ = false;
 	this->checkGrade();
@@ -41,6 +42,7 @@ Form::~Form( void )
 
 Form& Form::operator=( const Form& rhs )
 {
+	this->signedBy_ = rhs.getSignature();
 	this->isSigned_ = rhs.formIsSigned();
 	this->isOutOfBound_ = rhs.formIsOutOfBound();
 	return *this;
@@ -49,6 +51,11 @@ Form& Form::operator=( const Form& rhs )
 const std::string	Form::getName( void ) const
 {
 	return this->name_;
+}
+
+const std::string	Form::getSignature( void ) const
+{
+	return this->signedBy_;
 }
 
 bool	Form::formIsSigned( void ) const
@@ -73,42 +80,52 @@ size_t	Form::getExecutionGrade( void ) const
 
 void	Form::beSigned( const Bureaucrat& bureaucrat )
 {
-	if (this->isOutOfBound_ == true)
+	try
 	{
-		try
-		{
-			if (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH)
-				throw Form::GradeTooHighException();
-		}
-		catch (Form::GradeTooHighException& e)
-		{
-		std::cout << e.what() << std::endl;
-		}
-		try
-		{
-			if (this->signatureGrade_ > LOW || this->executionGrade_ > LOW)
-				throw Form::GradeTooLowException();
-		}
-		catch (Form::GradeTooLowException& e)
-		{
-			std::cout << e.what() << std::endl;
-			return ;
-		}
+		if (this->isSigned_ == true)
+			throw Form::AlreadySignedException();
 	}
-	else	
+	catch (Form::AlreadySignedException& e)
 	{
-		try
-		{
-			if (bureaucrat.getGrade() > this->getSignatureGrade())
-				throw Form::GradeSignatureTooLow();
-		}
-		catch (Form::GradeSignatureTooLow& e)
-		{
-			std::cout << e.what() << std::endl;
-			return ;
-		}
+		std::cout << MIDORI << bureaucrat.getName() << END_COLOR << " cannot sign the form " << SORAIRO << this->getName() << END_COLOR << e.what() << std::endl;
+		return ;
 	}
+
+	try
+	{
+		if (this->isOutOfBound_ == true && (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH))
+			throw Form::GradeTooHighException();
+	}
+	catch (Form::GradeTooHighException& e)
+	{
+		std::cout << AKAI <<  e.what() << END_COLOR << std::endl;
+		return ;
+	}
+
+	try
+	{
+		if (this->isOutOfBound_ == true && (this->signatureGrade_ > LOW || this->executionGrade_ > LOW))
+			throw Form::GradeTooLowException();
+	}
+	catch (Form::GradeTooLowException& e)
+	{
+		std::cout << AKAI << e.what() << END_COLOR << std::endl;
+		return ;
+	}
+	
+	try
+	{
+		if (bureaucrat.getGrade() > this->getSignatureGrade())
+			throw Form::GradeSignatureTooLow();
+	}
+	catch (Form::GradeSignatureTooLow& e)
+	{
+		std::cout << MIDORI <<  bureaucrat.getName() << END_COLOR << AKAI << e.what() << END_COLOR << std::endl;
+		return ;
+	}
+
 	this->isSigned_ = true;
+	this->signedBy_ = bureaucrat.getName();
 }
 
 void	Form::checkGrade( void )
@@ -135,12 +152,17 @@ const char*	Form::GradeTooLowException::what() const throw()
 
 const char*	Form::GradeSignatureTooLow::what() const throw() 
 {
-	return "This form cannot be signed, since this bureaucrat's grade is too low";
+	return " cannot sign this form, because its bureaucrat grade is too low";
 }
 
 const char*	Form::GradeInvalidException::what() const throw() // for Bureaucrat.signForm()
 {
 	return "This form cannot be signed, since it has invalid grade level";
+}
+
+const char*	Form::AlreadySignedException::what() const throw()
+{
+	return ", because it has already been signed";
 }
 
 std::ostream& operator<<( std::ostream& s, const Form& rhs )

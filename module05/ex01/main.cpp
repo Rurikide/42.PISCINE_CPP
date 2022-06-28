@@ -18,10 +18,8 @@ int	main(void)
 {
 	Bureaucrat tom = Bureaucrat("Tom", 0);
 	Bureaucrat isa  = Bureaucrat("Isabelle", 1);
-	Bureaucrat so = Bureaucrat("Sophie", 43);
+	Bureaucrat so = Bureaucrat("Sophie", 2);
 	Bureaucrat cori = Bureaucrat("Cori", 150);
-	Bureaucrat mondello = Bureaucrat("Mondello", 3);
-	Bureaucrat chalifour = Bureaucrat("Chalifour", 100);
 
 	Form zero("Zero", 0, 0);
 	Form one("One", 1, 1);
@@ -29,22 +27,29 @@ int	main(void)
 	Form basis("Basis", 150, 150);
 	Form error("Error", 151, 151);
 
+
 	zero.beSigned(isa);
+	isa.signForm(zero);
 
 	one.beSigned(isa);
-	one.beSigned(cori);
+	isa.signForm(one);
 
+	so.signForm(fortyTwo);
+
+	fortyTwo.beSigned(tom);
 	fortyTwo.beSigned(isa);
-	fortyTwo.beSigned(so);
 
-
-	basis.beSigned(isa);
-	basis.beSigned(cori);
-
-	isa.signForm(zero);
+	tom.signForm(fortyTwo);
 	isa.signForm(fortyTwo);
-	cori.signForm(fortyTwo);
+	so.signForm(fortyTwo);
 
+	basis.beSigned(cori);
+	so.signForm(basis);
+
+
+
+//	error.beSigned(cori);
+//	cori.signForm(error);
 
 	return SUCCESS;
 }

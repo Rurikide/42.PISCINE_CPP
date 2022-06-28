@@ -21,6 +21,7 @@ class Form {
 		Form( void );
 
 		const std::string	name_;
+		std::string		signedBy_;
 		bool				isSigned_;
 		bool				isOutOfBound_;
 		const size_t		signatureGrade_;
@@ -34,6 +35,7 @@ class Form {
 		Form& operator=( const Form& rhs );
 
 		const std::string	getName( void ) const;
+		const std::string	getSignature( void ) const;
 		bool			formIsSigned( void ) const;
 		bool			formIsOutOfBound( void ) const;
 		size_t			getSignatureGrade( void ) const;
@@ -54,6 +56,10 @@ class Form {
 			public: virtual const char* what() const throw();
 		};
 		class GradeInvalidException : public std::exception
+		{
+			public: virtual const char* what() const throw();
+		};
+		class AlreadySignedException : public std::exception
 		{
 			public: virtual const char* what() const throw();
 		};
