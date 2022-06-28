@@ -6,11 +6,13 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:31 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/28 16:47:00 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/28 18:21:45 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "define.hpp"
 #include <iostream>
 
@@ -52,6 +54,28 @@ int	main(void)
 
 	isa.signForm(s3);
 	tom.executeForm(s3);
+
+	RobotomyRequestForm r1 = RobotomyRequestForm("ra");
+
+	cori.executeForm(r1);
+	max.signForm(r1);
+	isa.signForm(r1);
+
+	tom.executeForm(r1);
+	tom.executeForm(r1);
+	tom.executeForm(r1);
+	tom.executeForm(r1);
+	
+	cori.executeForm(r1);
+
+
+	PresidentialPardonForm p1 = PresidentialPardonForm("p1");
+	
+	so.signForm(p1);
+	isa.executeForm(p1);
+	isa.signForm(p1);
+	tom.executeForm(p1);
+	isa.executeForm(p1);
 
 	return SUCCESS;
 }

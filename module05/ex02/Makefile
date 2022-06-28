@@ -6,7 +6,7 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/28 13:52:27 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/28 17:57:57 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp 
+SRCS= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp 
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
