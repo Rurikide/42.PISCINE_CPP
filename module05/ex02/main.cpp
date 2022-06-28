@@ -24,7 +24,7 @@ int	main(void)
 	Form zero("Zero", 0, 0);
 	Form one("One", 1, 1);
 	Form fortyTwo("FortyTwo", 42, 42);
-	Form basis("Basis", 18, 100);
+	Form basis("Basis", 150, 150);
 	Form error("Error", 151, 151);
 
 
@@ -44,13 +44,12 @@ int	main(void)
 	so.signForm(fortyTwo);
 
 	basis.beSigned(cori);
+	so.signForm(basis);
 
-	error.beSigned(cori);
-	cori.signForm(error);
 
-	std::cout << fortyTwo << std::endl;
-	std::cout << basis << std::endl;
+
+//	error.beSigned(cori);
+//	cori.signForm(error);
 
 	return SUCCESS;
-
 }
