@@ -6,13 +6,14 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:31 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/28 18:21:45 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 09:53:46 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 #include "define.hpp"
 #include <iostream>
+#include <stdlib.h> // srand();
 
 // ShrubberyCreationForm signature 145, execute 137
 // RobotomyRequestForm	signature 72, execute 45
@@ -51,6 +52,7 @@ int	main(void)
 /*
 	if (rrf2 == NULL)
 		return FAIL;
+	srand(time(0));
 	tom.signForm(*rrf2);
 	isa.executeForm(*rrf2);
 	delete rrf2;

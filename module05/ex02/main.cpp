@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:31 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/28 18:21:45 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 09:50:21 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "define.hpp"
 #include <iostream>
+#include <stdlib.h>
 
 // ShrubberyCreationForm signature 145, execute 137
 // RobotomyRequestForm	signature 72, execute 45
@@ -54,7 +55,8 @@ int	main(void)
 
 	isa.signForm(s3);
 	tom.executeForm(s3);
-
+	
+	srand(time(0)); // to create a seed (this one depends on the date)
 	RobotomyRequestForm r1 = RobotomyRequestForm("ra");
 
 	cori.executeForm(r1);

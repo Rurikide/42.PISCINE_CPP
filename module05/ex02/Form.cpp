@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:20:18 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/29 07:45:32 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 09:41:38 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ void	Form::beSigned( const Bureaucrat& bureaucrat )
 {
 	if (this->isSigned_ == true)
 		throw Form::AlreadySignedException();
-	if (this->isOutOfBound_ == true && (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH))
-		throw Form::GradeTooHighException();
-	if (this->isOutOfBound_ == true && (this->signatureGrade_ > LOW || this->executionGrade_ > LOW))
-		throw Form::GradeTooLowException();
+//	if (this->isOutOfBound_ == true && (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH))
+//		throw Form::GradeTooHighException();
+//	if (this->isOutOfBound_ == true && (this->signatureGrade_ > LOW || this->executionGrade_ > LOW))
+//		throw Form::GradeTooLowException();
 	if (bureaucrat.getGrade() > this->getSignatureGrade())
 		throw Form::GradeSignatureTooLow();
 	this->isSigned_ = true;
@@ -101,11 +101,13 @@ void	Form::checkGrade( void )
 {
 		if (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH)
 		{
-			this->isOutOfBound_ = true;
+			throw Form::GradeTooHighException();
+//			this->isOutOfBound_ = true;
 		}
 		if (this->signatureGrade_ > LOW || this->executionGrade_ > LOW)
 		{
-			this->isOutOfBound_ = true;
+			throw Form::GradeTooLowException();
+//			this->isOutOfBound_ = true;
 		}
 }
 
