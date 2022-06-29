@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:20:18 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 18:27:41 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 07:42:46 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,64 +80,28 @@ size_t	Form::getExecutionGrade( void ) const
 
 void	Form::beSigned( const Bureaucrat& bureaucrat )
 {
-	try
-	{
-		if (this->isSigned_ == true)
-			throw Form::AlreadySignedException();
-	}
-	catch (Form::AlreadySignedException& e)
-	{
-		std::cout << MIDORI << bureaucrat.getName() << END_COLOR << " cannot sign the form " << SORAIRO << this->getName() << END_COLOR << e.what() << std::endl;
-		return ;
-	}
-
-	try
-	{
-		if (this->isOutOfBound_ == true && (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH))
-			throw Form::GradeTooHighException();
-	}
-	catch (Form::GradeTooHighException& e)
-	{
-		std::cout << AKAI <<  e.what() << END_COLOR << std::endl;
-		return ;
-	}
-
-	try
-	{
-		if (this->isOutOfBound_ == true && (this->signatureGrade_ > LOW || this->executionGrade_ > LOW))
-			throw Form::GradeTooLowException();
-	}
-	catch (Form::GradeTooLowException& e)
-	{
-		std::cout << AKAI << e.what() << END_COLOR << std::endl;
-		return ;
-	}
-	
-	try
-	{
-		if (bureaucrat.getGrade() > this->getSignatureGrade())
-			throw Form::GradeSignatureTooLow();
-	}
-	catch (Form::GradeSignatureTooLow& e)
-	{
-		std::cout << MIDORI <<  bureaucrat.getName() << END_COLOR << AKAI << e.what() << END_COLOR << std::endl;
-		return ;
-	}
-
+	if (this->isSigned_ == true)
+		throw Form::AlreadySignedException();
+	if (this->isOutOfBound_ == true && (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH))
+		throw Form::GradeTooHighException();
+	if (this->isOutOfBound_ == true && (this->signatureGrade_ > LOW || this->executionGrade_ > LOW))
+		throw Form::GradeTooLowException();
+	if (bureaucrat.getGrade() > this->getSignatureGrade())
+		throw Form::GradeSignatureTooLow();
 	this->isSigned_ = true;
 	this->signedBy_ = bureaucrat.getName();
 }
 
 void	Form::checkGrade( void )
 {
-		if (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH)
-		{
-			this->isOutOfBound_ = true;
-		}
-		if (this->signatureGrade_ > LOW || this->executionGrade_ > LOW)
-		{
-			this->isOutOfBound_ = true;
-		}
+	if (this->signatureGrade_ < HIGH || this->executionGrade_ < HIGH)
+	{
+		this->isOutOfBound_ = true;
+	}
+	if (this->signatureGrade_ > LOW || this->executionGrade_ > LOW)
+	{
+		this->isOutOfBound_ = true;
+	}
 }
 
 const char*	Form::GradeTooHighException::what() const throw() 
@@ -167,7 +131,7 @@ const char*	Form::AlreadySignedException::what() const throw()
 
 std::ostream& operator<<( std::ostream& s, const Form& rhs )
 {
-	s << "[] Name fo the form: " << rhs.getName() << " | isSigned: " << (rhs.formIsSigned() ? "yes" : "no") << " | signatureGrade: " << rhs.getSignatureGrade() << " | executionGrade: " << rhs.getExecutionGrade() << " []" << std::endl;
+	s << std::endl << "[] Name of the form: " << rhs.getName() << " | isSigned: " << (rhs.formIsSigned() ? "yes" : "no") << " | signatureGrade: " << rhs.getSignatureGrade() << " | executionGrade: " << rhs.getExecutionGrade() << " []" << std::endl;
 
 	return s;
 }

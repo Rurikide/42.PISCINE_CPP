@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:18:25 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 15:38:33 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 07:39:22 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Bureaucrat {
 		void	getPromoted( void );
 		void	getDemoted( void );
 		void	checkGrade( void );
-		void	signForm( const Form& form ) const;
+		void	signForm( Form& form ) const;
 
 		class GradeTooHighException : public std::exception
 		{

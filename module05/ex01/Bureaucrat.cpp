@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:11:11 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 18:34:37 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 07:39:08 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,74 +58,41 @@ size_t	Bureaucrat::getGrade( void ) const
 
 void	Bureaucrat::getPromoted( void )
 {
-	try
+	if (this->grade_ <= HIGH)
 	{
-		if (this->grade_ <= HIGH)
-		{
-			throw Bureaucrat::GradeTooHighException(); // if throw, won't do this->grade_++;
-		}
-		this->grade_--;
+		throw Bureaucrat::GradeTooHighException(); // if throw, won't do this->grade_++;
 	}
-	catch (Bureaucrat::GradeTooHighException& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	this->grade_--;
 }
 
 void	Bureaucrat::getDemoted( void )
 {
-	try
+	if (this->grade_ >= LOW)
 	{
-		if (this->grade_ >= LOW)
-		{
-			throw Bureaucrat::GradeTooLowException(); // if throw, won't do the this->grade_--;
-		}
-		this->grade_++;
+		throw Bureaucrat::GradeTooLowException(); // if throw, won't do the this->grade_--;
 	}
-	catch (Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	this->grade_++;
 }
 
 void	Bureaucrat::checkGrade( void )
 {
-	try
+	if (this->grade_ < HIGH || this->grade_ > LOW)
 	{
-		if (this->grade_ < HIGH || this->grade_ > LOW)
-		{
-			this->grade_ = 42;
-			throw Bureaucrat::GradeInvalidException();
-		}
-	}
-	catch (Bureaucrat::GradeInvalidException& e)
-	{
-		std::cout << e.what() << std::endl;
+		throw Bureaucrat::GradeInvalidException();
 	}
 }
 
-void	Bureaucrat::signForm( const Form& form ) const
+void	Bureaucrat::signForm( Form& form ) const
 {
-	if (this->grade_ <= form.getSignatureGrade() && form.formIsSigned() == true)
+	try
 	{
-		try
-		{
-			if (this->name_ != form.getSignature())
-				throw Bureaucrat::ImposteurException();
-		}
-		catch (Bureaucrat::ImposteurException& e)
-		{
-		std::cout << MIDORI << this->name_ << END_COLOR << AKAI << e.what() << END_COLOR << SORAIRO << form.getName() << END_COLOR << ". " << MIDORI << form.getSignature() << END_COLOR << " did." << std::endl; return ;
-		}
-
-		std::cout << MIDORI << this->name_ << END_COLOR << " signed the form " << SORAIRO << form.getName() << END_COLOR << std::endl;
+		form.beSigned(*this);
 	}
-	else if (form.formIsOutOfBound() == true)
-		std::cout << AKAI << "Nobody could sign the form " << END_COLOR << SORAIRO << form.getName() << END_COLOR << AKAI <<  " since it has invalid grade requirements" << END_COLOR << std::endl;
-	else if (this->grade_ <= form.getSignatureGrade() && form.formIsSigned() == false)
-		std::cout << MIDORI << this->name_ << END_COLOR << " has a grade high enough to sign the form " << SORAIRO << form.getName() << END_COLOR << " but didn't sign it yet" << std::endl;
-	else
-		std::cout << MIDORI << this->name_ << END_COLOR << AKAI << " couldn't sign the form " << END_COLOR << SORAIRO << form.getName() << END_COLOR << AKAI << " because its bureaucrat grade is too low" << END_COLOR << std::endl; 
+	catch (std::exception& e)
+	{
+		std::cout << MIDORI << this->getName() << END_COLOR << AKAI << e.what() << END_COLOR << std::endl;
+		return ;
+	}
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
