@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:11:11 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 14:17:47 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 07:06:49 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,50 +56,26 @@ size_t	Bureaucrat::getGrade( void ) const
 
 void	Bureaucrat::getPromoted( void )
 {
-	try
+	if (this->grade_ <= HIGH)
 	{
-		if (this->grade_ <= HIGH)
-		{
-			throw Bureaucrat::GradeTooHighException(); // if throw, won't do this->grade_++;
-		}
-		this->grade_--;
+		throw Bureaucrat::GradeTooHighException(); // if throw, won't do this->grade_++;
 	}
-	catch (Bureaucrat::GradeTooHighException& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	this->grade_--;
 }
 
 void	Bureaucrat::getDemoted( void )
 {
-	try
+	if (this->grade_ >= LOW)
 	{
-		if (this->grade_ >= LOW)
-		{
-			throw Bureaucrat::GradeTooLowException(); // if throw, won't do the this->grade_--;
-		}
-		this->grade_++;
+		throw Bureaucrat::GradeTooLowException(); // if throw, won't do the this->grade_--;
 	}
-	catch (Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	this->grade_++;
 }
 
 void	Bureaucrat::checkGrade( void )
 {
-	try
-	{
-		if (this->grade_ < HIGH || this->grade_ > LOW)
-		{
-			this->grade_ = 42;
+	if (this->grade_ < HIGH || this->grade_ > LOW)
 			throw Bureaucrat::GradeInvalidException();
-		}
-	}
-	catch (Bureaucrat::GradeInvalidException& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
@@ -114,7 +90,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 const char* Bureaucrat::GradeInvalidException::what() const throw()
 {
-	return "Grade is out of range. Setting it to grade 42";
+	return "Grade is out of range.";
 }
 
 std::ostream& operator<<( std::ostream& s, const Bureaucrat& rhs )

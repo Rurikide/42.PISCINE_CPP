@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:07:31 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/27 14:20:51 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 07:12:00 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,61 @@
 
 int	main(void)
 {
-	Bureaucrat tom = Bureaucrat("Tom", 0);
-	Bureaucrat isa  = Bureaucrat("Isabelle", 1);
-	Bureaucrat so = Bureaucrat("Sophie", 43);
-	Bureaucrat cori = Bureaucrat("Cori", 150);
-	Bureaucrat mondello = Bureaucrat("Mondello", 3);
-	Bureaucrat chalifour = Bureaucrat("Chalifour", 100);
+	try
+	{
+		Bureaucrat isa  = Bureaucrat("Isabelle", 1);
+		Bureaucrat tom = Bureaucrat("Tom", 0);
+		Bureaucrat so = Bureaucrat("Sophie", 43);
+		Bureaucrat cori = Bureaucrat("Cori", 150);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	try
+	{
+		Bureaucrat isa  = Bureaucrat("Isabelle", 1);
+		isa.getPromoted();
+		std::cout << isa << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
-	tom.getDemoted();
-	isa.getPromoted();
-	so.getPromoted();
-	cori.getDemoted();
-	mondello.getPromoted();
-	chalifour.getDemoted();
+	try
+	{
+		Bureaucrat cori  = Bureaucrat("Cori", 150);
+		cori.getDemoted();
+		std::cout << cori << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
-	std::cout << tom << std::endl;
-	std::cout << isa << std::endl;
-	std::cout << so << std::endl;
-	std::cout << cori << std::endl;
-	std::cout << mondello << std::endl;
-	std::cout << chalifour << std::endl;
+	try
+	{
+		Bureaucrat tom  = Bureaucrat("Tom", 3);
+		tom.getPromoted();
+		std::cout << tom << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	try
+	{
+		Bureaucrat so  = Bureaucrat("Sophie", 43);
+		so.getPromoted();
+		std::cout << so << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
 	return SUCCESS;
 }
