@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:20:18 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/29 09:36:03 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:54:23 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ const char*	Form::GradeInvalidException::what() const throw() // for Bureaucrat.
 
 const char*	Form::AlreadySignedException::what() const throw()
 {
-	return ", because it has already been signed";
+	return " cannot sign this form, because it has already been signed";
 }
 
 std::ostream& operator<<( std::ostream& s, const Form& rhs )

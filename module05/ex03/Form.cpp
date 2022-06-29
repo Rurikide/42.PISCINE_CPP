@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:20:18 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/29 09:57:08 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:56:25 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ const char*	Form::GradeInvalidException::what() const throw() // for Bureaucrat.
 
 const char*	Form::AlreadySignedException::what() const throw()
 {
-	return ", because it has already been signed";
+	return " cannot sign this form, because it has already been signed";
 }
 
 const char*	Form::NotSignedException::what() const throw()
