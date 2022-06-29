@@ -17,24 +17,23 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm( void ) : Form("Shrubbery Creation Form", "Target", 145, 137)
 {
-	std::cout << "ShrubberyCreationForm Default Constructor" << std::endl;
+//	std::cout << "ShrubberyCreationForm Default Constructor" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm& rhs ) : Form(rhs.getName(), rhs.getTarget(), rhs.getSignatureGrade(), rhs.getExecutionGrade())
 {
-	std::cout << "ShrubberyCreationForm Copy Constructor" << std::endl;
+//	std::cout << "ShrubberyCreationForm Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const std::string& target ) : Form("Shrubbery Creation Form", target, 145, 137)
 {
-	// This constructor is the one whose instantiating a new object of the sub class Shrubbery Creation Form
-	std::cout << "ShrubberyCreationForm Target Constructor" << std::endl;
+//	std::cout << "ShrubberyCreationForm Target Constructor" << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm( void )
 {
-	std::cout << "ShrubberyCreationForm Default Destructor" << std::endl;
+//	std::cout << "ShrubberyCreationForm Default Destructor" << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=( const ShrubberyCreationForm& rhs )

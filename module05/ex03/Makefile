@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME= ThreeForms
+NAME= Intern
 
 CXX= clang++
 
@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp 
+SRCS= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp 
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 

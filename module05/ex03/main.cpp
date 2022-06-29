@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 #include "define.hpp"
 #include <iostream>
 
@@ -22,60 +20,64 @@
 
 int	main(void)
 {
-	try
-	{
-		Bureaucrat isa = Bureaucrat("Isabelle", 1);
-		Bureaucrat tom = Bureaucrat("Tom", 42);
-		Bureaucrat so = Bureaucrat("Sophie", 75);
-		Bureaucrat cori = Bureaucrat("Cori", 145);
-		Bureaucrat max = Bureaucrat("Maxime", 151);
-	}
-	catch (Bureaucrat::GradeInvalidException& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	Intern	someRandomIntern;
+	Form*	rrf1;
+//	Form*	rrf2;
+//	Form*	rrf3;
+//	Form*	rrf4;
+//	Form*	rrf5;
 
+	//Intern attempts to create a form before Bureaucrat use them
+	
+	rrf1 = someRandomIntern.makeForm("shrubbery creation", "Aube");
+//	rrf2 = someRandomIntern.makeForm("robotomy request", "Badia");
+//	rrf3 = someRandomIntern.makeForm("presidential pardon", "Collette");
+//	rrf4 = someRandomIntern.makeForm("presidential request", "Founier");
+//	rrf5 = someRandomIntern.makeForm("robotomy pardon", "Leblanc");
+	
 	Bureaucrat isa = Bureaucrat("Isabelle", 1);
-	Bureaucrat tom = Bureaucrat("Tom", 42);
-	Bureaucrat so = Bureaucrat("Sophie", 75);
-	Bureaucrat cori = Bureaucrat("Cori", 145);
-	Bureaucrat max = Bureaucrat("Maxime", 150);
-
-	ShrubberyCreationForm s1 = ShrubberyCreationForm("sa");
-	ShrubberyCreationForm s2 = ShrubberyCreationForm("sb");
-	ShrubberyCreationForm s3 = ShrubberyCreationForm("sc");
-
-	isa.signForm(s1);
-	cori.executeForm(s1);
+//	Bureaucrat tom = Bureaucrat("Tom", 3);
+//	Bureaucrat so = Bureaucrat("Sophie", 42);
+//	Bureaucrat cori = Bureaucrat("Cori", 100);
+//	Bureaucrat max = Bureaucrat("Mondello", 150);
 
 
-	max.signForm(s2);
-	max.executeForm(s2);
+	if (rrf1 == NULL)
+		return FAIL;
+	isa.signForm(*rrf1);
+	isa.executeForm(*rrf1);
+	delete rrf1;
 
-	isa.signForm(s3);
-	tom.executeForm(s3);
+/*
+	if (rrf2 == NULL)
+		return FAIL;
+	tom.signForm(*rrf2);
+	isa.executeForm(*rrf2);
+	delete rrf2;
+*/
 
-	RobotomyRequestForm r1 = RobotomyRequestForm("ra");
+/*
+	if (rrf3 == NULL)
+		return FAIL;
+	so.signForm(*rrf3);
+	isa.executeForm(*rrf3);
+	delete rrf3;
+*/
 
-	cori.executeForm(r1);
-	max.signForm(r1);
-	isa.signForm(r1);
+/*
+	if (rrf4 == NULL)
+		return FAIL;
+	cori.signForm(*rrf4);
+	isa.executeForm(*rrf4);
+	delete rrf4;
+*/
 
-	tom.executeForm(r1);
-	tom.executeForm(r1);
-	tom.executeForm(r1);
-	tom.executeForm(r1);
-	
-	cori.executeForm(r1);
-
-
-	PresidentialPardonForm p1 = PresidentialPardonForm("p1");
-	
-	so.signForm(p1);
-	isa.executeForm(p1);
-	isa.signForm(p1);
-	tom.executeForm(p1);
-	isa.executeForm(p1);
-
+/*
+	if (rrf5 == NULL)
+		return FAIL;
+	max.signForm(*rrf5);
+	isa.executeForm(*rrf5);
+	delete rrf5;
+*/
 	return SUCCESS;
 }

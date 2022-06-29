@@ -30,7 +30,7 @@ Intern::Intern( void )
 
 Intern::Intern( const Intern& rhs )
 {
-	std::cout << "Intern  Copy Constructor" << std::endl;
+	std::cout << "Intern Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
@@ -50,3 +50,35 @@ Intern& Intern::operator=( const Intern& rhs )
 
 	return *this;
 }
+
+Form*	Intern::makeForm( const std::string& formClass, const std::string& target ) const
+{
+	for (int nb = 0; nb < 3; nb++)
+	{
+		if (mode[nb].formClass == formClass)
+		{
+			std::cout << MIDORI << "Intern" << END_COLOR << " creates " << SORAIRO << formClass << " form" << END_COLOR << std::endl;
+			return (this->*mode[nb].formExecute)(target);
+		}
+	}
+	std::cout << AKAI << "Error form " << formClass << " doesn't exist" << END_COLOR << std::endl;
+	return NULL;
+}
+
+Form*	Intern::makeShrubbery( const std::string& target ) const
+{
+	return new ShrubberyCreationForm(target);
+}
+
+Form*	Intern::makeRobotomy( const std::string& target ) const
+{
+	return new RobotomyRequestForm(target);
+}
+
+Form*	Intern::makePresidential( const std::string& target ) const
+{
+	return new PresidentialPardonForm(target);
+}
+
+// delete in the main
+

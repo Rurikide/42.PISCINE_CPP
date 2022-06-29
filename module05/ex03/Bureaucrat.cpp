@@ -20,24 +20,24 @@
 
 Bureaucrat::Bureaucrat( void ) : name_("Nameless"), grade_(LOW)
 {
-	std::cout << "Bureaucrat Default Constructor" << std::endl;
+//	std::cout << "Bureaucrat Default Constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const std::string name, size_t grade ) : name_(name), grade_(grade)
 {
-	std::cout << "Bureaucrat Name & Grade Constructor" << std::endl;
+//	std::cout << "Bureaucrat Name & Grade Constructor" << std::endl;
 	this->checkGrade();
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat& rhs ) : name_(rhs.getName())
 {
-	std::cout << "Bureaucrat Copy Constructor" << std::endl;
+//	std::cout << "Bureaucrat Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
 Bureaucrat::~Bureaucrat( void )
 {
-	std::cout << "Bureaucrat Default Destructor" << std::endl;
+//	std::cout << "Bureaucrat Default Destructor" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat& rhs )

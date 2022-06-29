@@ -34,7 +34,7 @@ class Intern
 
 		Intern& operator=( const Intern & rhs );
 
-		Form*	makeForm( const std::string& form, const std::string& target ) const;
+		Form*	makeForm( const std::string& formClass, const std::string& target ) const;
 };
 
 #endif

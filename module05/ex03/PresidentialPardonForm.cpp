@@ -16,24 +16,23 @@
 
 PresidentialPardonForm::PresidentialPardonForm( void ) : Form("Presidential Pardon Form", "Target", 25, 5)
 {
-	std::cout << "PresidentialPardonForm Default Constructor" << std::endl;
+//	std::cout << "PresidentialPardonForm Default Constructor" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm& rhs ) : Form(rhs.getName(), rhs.getTarget(), rhs.getSignatureGrade(), rhs.getExecutionGrade())
 {
-	std::cout << "PresidentialPardonForm Copy Constructor" << std::endl;
+//	std::cout << "PresidentialPardonForm Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const std::string& target ) : Form("Presidential Pardon Form", target, 25, 5)
 {
-	// This constructor is the one whose instantiating a new object of the sub class Presidential Pardon Form
-	std::cout << "PresidentialPardonForm Target Constructor" << std::endl;
+//	std::cout << "PresidentialPardonForm Target Constructor" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm( void )
 {
-	std::cout << "PresidentialPardonForm Default Destructor" << std::endl;
+//	std::cout << "PresidentialPardonForm Default Destructor" << std::endl;
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=( const PresidentialPardonForm& rhs )

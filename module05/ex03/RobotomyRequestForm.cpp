@@ -18,24 +18,23 @@
 
 RobotomyRequestForm::RobotomyRequestForm( void ) : Form("Robotomy Request Form", "Target", 72, 45)
 {
-	std::cout << "RobotomyRequestForm Default Constructor" << std::endl;
+	//std::cout << "RobotomyRequestForm Default Constructor" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm& rhs ) : Form(rhs.getName(), rhs.getTarget(), rhs.getSignatureGrade(), rhs.getExecutionGrade())
 {
-	std::cout << "RobotomyRequestForm Copy Constructor" << std::endl;
+	//std::cout << "RobotomyRequestForm Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const std::string& target ) : Form("Robotomy Request Form", target, 72, 45)
 {
-	// This constructor is the one whose instantiating a new object of the sub class Robotomy Request Form
-	std::cout << "RobotomyRequestForm Target Constructor" << std::endl;
+	//std::cout << "RobotomyRequestForm Target Constructor" << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm( void )
 {
-	std::cout << "RobotomyRequestForm Default Destructor" << std::endl;
+	//std::cout << "RobotomyRequestForm Default Destructor" << std::endl;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=( const RobotomyRequestForm& rhs )

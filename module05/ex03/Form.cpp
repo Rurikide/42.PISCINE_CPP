@@ -16,12 +16,12 @@
 
 Form::Form( void ) : name_("Blank"), signatureGrade_(1), executionGrade_(1)
 {
-	std::cout << "Form Default Constructor" << std::endl;
+//	std::cout << "Form Default Constructor" << std::endl;
 }
 
 Form::Form( const std::string& name, const std::string& target, const size_t signatureGrade, const size_t executionGrade ) : name_(name), target_(target),  signatureGrade_(signatureGrade), executionGrade_(executionGrade)
 {
-	std::cout << "Form Attributes Setting Constructor" << std::endl;
+//	std::cout << "Form Attributes Setting Constructor" << std::endl;
 
 	this->signedBy_ = "";
 	this->isSigned_ = false;
@@ -31,13 +31,13 @@ Form::Form( const std::string& name, const std::string& target, const size_t sig
 
 Form::Form( const Form& rhs ) : name_(rhs.getName()), target_(rhs.getTarget()), signatureGrade_(rhs.getSignatureGrade()), executionGrade_(rhs.getExecutionGrade())
 {
-	std::cout << "Form Copy Constructor" << std::endl;
+//	std::cout << "Form Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
 Form::~Form( void )
 {
-	std::cout << "Form Default Destructor" << std::endl;
+//	std::cout << "Form Default Destructor" << std::endl;
 }
 
 Form& Form::operator=( const Form& rhs )

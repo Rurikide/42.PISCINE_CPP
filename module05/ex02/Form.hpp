@@ -31,7 +31,7 @@ class Form {
 	public:
 		Form( const std::string& name, const std::string& target, const size_t signatureGrade, const size_t executionGrade );
 		Form( const Form& rhs );
-		~Form( void );
+		virtual ~Form( void );
 
 		Form& operator=( const Form& rhs );
 
