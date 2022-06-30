@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:46:07 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/30 17:39:35 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/30 17:42:31 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,7 +174,7 @@ void	ConversionOfScalar::printResChar( void )
 	else if (resChar_ < 32 || resChar_ > 126 || resInt_ < 32 || resInt_ > 126)
 		std::cout << "Non displayable" << std::endl;
 	else
-		std::cout << resChar_ << std::endl;
+		std::cout << "'" << resChar_ << "'" << std::endl;
 }
 
 void	ConversionOfScalar::printResInt( void )
