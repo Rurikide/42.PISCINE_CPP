@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 16:02:21 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/30 13:12:29 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/30 16:56:00 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define CONVERSIONOFSCALAR_HPP
 
 #include <string>
+
+enum eScalarType { charType = 1, intType = 2, floatType = 3, doubleType = 4, pseudoType = 5, errorType = 6 };
 
 class ConversionOfScalar {
 
@@ -38,15 +40,17 @@ class ConversionOfScalar {
 		ConversionOfScalar& operator=( const ConversionOfScalar& rhs );
 
 
-		enum eScalarType { charType = 1, intType = 2, floatType = 3, doubleType = 4, pseudoTypeF = 5, pseudoTypeD = 6, errorType = 7 };
 
 		/*------------------------MEMBER-FUNCTION---------------------------*/
 
-		eScalarType	parseInput( void );	// sets the inputType_, also sets the value of the corresponding res attribute (either resChar_, resInt_, resFloat_ or resDouble_)
-		
-		int			isPseudoType( void ); // return values: 0 == no; 5 == pseudoTypeF; 6 == pseudoTypeD
-		
-		void		staticCastMachine( void )
+		eScalarType	parseInput( void );	
+		eScalarType	isPseudoType( void ); 
+		void		staticCastMachine( void );
+		void		printResults( void );
+		void		printResChar( void );
+		void		printResInt( void );
+		void		printResFloat( void );
+		void		printResDouble( void );
 };
 
 #endif

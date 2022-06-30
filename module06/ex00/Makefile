@@ -6,7 +6,7 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/29 16:01:44 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/06/30 16:32:41 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp
+SRCS= main.cpp ConversionOfScalar.cpp
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
