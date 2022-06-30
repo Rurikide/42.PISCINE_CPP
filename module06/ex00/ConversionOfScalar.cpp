@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:46:07 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/30 17:09:20 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/06/30 17:39:35 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 	if (aPseudoType != (eScalarType)-1)
 		return aPseudoType;
 
-	if (input_.length() == 1 && (std::isalpha(input_[0])) && (std::isprint(input_[0])))
+	if (input_.length() == 1 && (!std::isdigit(input_[0])) && (std::isprint(input_[0])))
 	{
 		resChar_ = input_[0];
 		return charType;
@@ -124,6 +124,9 @@ void	ConversionOfScalar::staticCastMachine( void )
 		case 0: //charType : resChar
 		{
 			resInt_ = static_cast<int>(resChar_); // char to ascii value
+			
+			std::cout << resInt_ << std::endl;
+
 			resFloat_ = static_cast<float>(resInt_);
 			resDouble_ = static_cast<double>(resInt_);
 			break ;
@@ -182,12 +185,13 @@ void	ConversionOfScalar::printResInt( void )
 		std::cout << "impossible" << std::endl;
 	else
 	{
-		double limit = std::stod(input_);
-		
-		if (limit > INT32_MAX || limit < INT32_MIN)
-			std::cout << "overflow" << std::endl;
-		else
-			std::cout << resInt_ << std::endl;
+		try
+		{
+			if (inputType_ == charType || std::stoi(input_))
+				std::cout << resInt_ << std::endl;
+		}
+		catch (std::exception& e)
+		{ std::cout << "overflow" << std::endl; }
 	}
 }
 
