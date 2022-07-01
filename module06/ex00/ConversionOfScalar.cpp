@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:46:07 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/07/01 13:23:47 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:55:40 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 	if (dot == 1)
 	{
 		if (input_[dotIndex + 1] && !std::isdigit(input_[dotIndex + 1]))
+			return errorType;
+		if (input_[input_.size() - 1] == '.')
 			return errorType;
 	}
 	if (f == 1)
