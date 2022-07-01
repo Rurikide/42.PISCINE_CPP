@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:46:07 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/30 17:42:31 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/07/01 13:13:20 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "define.hpp"
 #include <iostream>
 #include <iomanip> // setprecision(int)
-#include <limits.h>
+#include <limits>
 #include <cstdlib> // std::atoi std::atof
 #include <cctype> // std::isalpha std::isdigit std::isprint
 #include <exception>
@@ -169,9 +169,18 @@ void	ConversionOfScalar::staticCastMachine( void )
 	{
 		case 0: //charType : resChar
 		{
+
 			resInt_ = static_cast<int>(resChar_); // char to ascii value
 			resFloat_ = static_cast<float>(resInt_);
 			resDouble_ = static_cast<double>(resInt_);
+
+			std::cout << "initial input: " << input_ << std::endl;
+			std::cout << "resChar:" << resChar_ << std::endl;
+			std::cout << "static_cast char to int: " << resInt_ << std::endl;
+			std::cout << "static_cast char to float: " << resFloat_ << std::endl;
+			std::cout << "static_cast char to double: " << resDouble_ << std::endl;
+			std::cout << SORAIRO <<  "===============================================" << END_COLOR << std::endl;
+
 			break ;
 		}
 		case 1: //intType : resInt_
@@ -179,6 +188,14 @@ void	ConversionOfScalar::staticCastMachine( void )
 			resChar_ = static_cast<char>(resInt_);
 			resFloat_ = static_cast<float>(resInt_);
 			resDouble_ = static_cast<double>(resInt_);
+			
+			std::cout << "initial input: " << input_ << std::endl;
+			std::cout << "resInt:" << resInt_ << std::endl;
+			std::cout << "static_cast int to char: " << resChar_ << std::endl;
+			std::cout << "static_cast int to float: " << resFloat_ << std::endl;
+			std::cout << "static_cast int to double: " << resDouble_ << std::endl;
+			std::cout << SORAIRO <<  "===============================================" << END_COLOR << std::endl;
+
 			break ;
 		}
 		case 2: //floatType : resFloat_
@@ -186,6 +203,14 @@ void	ConversionOfScalar::staticCastMachine( void )
 			resChar_ = static_cast<char>(resFloat_);
 			resInt_ = static_cast<int>(resFloat_);
 			resDouble_ = static_cast<double>(resFloat_);
+
+			std::cout << "initial input: " << input_ << std::endl;
+			std::cout << "resFloat:" << resFloat_ << std::endl;
+			std::cout << "static_cast float to char: " << resChar_ << std::endl;
+			std::cout << "static_cast float to int: " << resInt_ << std::endl;
+			std::cout << "static_cast float to double: " << resDouble_ << std::endl;
+			std::cout << SORAIRO <<  "===============================================" << END_COLOR << std::endl;
+
 			break ;
 		}
 		case 3: //doubleType : resDouble_
@@ -193,6 +218,14 @@ void	ConversionOfScalar::staticCastMachine( void )
 			resChar_ = static_cast<char>(resDouble_);
 			resInt_ = static_cast<int>(resDouble_);
 			resFloat_ = static_cast<float>(resDouble_);
+
+			std::cout << "initial input: " << input_ << std::endl;
+			std::cout << "resDouble:" << resDouble_ << std::endl;
+			std::cout << "static_cast double to char: " << resChar_ << std::endl;
+			std::cout << "static_cast double to int: " << resInt_ << std::endl;
+			std::cout << "static_cast double to float: " << resFloat_ << std::endl;
+			std::cout << SORAIRO <<  "===============================================" << END_COLOR << std::endl;
+			
 			break ;
 		}
 		default:
@@ -255,7 +288,7 @@ void	ConversionOfScalar::printResFloat( void )
 	else if (inputType_ == pseudoTypeD)
 		std::cout << input_ + 'f' << std::endl;
 	else if (inputType_ == intType)
-		std::cout << resFloat_ << ".0f" << std::endl;
+		std::cout << std::fixed << std::setprecision(1) <<  resFloat_ << "f" << std::endl;
 	else
 	{
 		try
@@ -265,7 +298,7 @@ void	ConversionOfScalar::printResFloat( void )
 			else
 			{
 				std::stof(input_);
-				std::cout << std::fixed << std::setprecision(1) << resFloat_ << 'f' << std::endl;
+				std::cout << resFloat_ << 'f' << std::endl;
 			}
 		}
 		catch (std::exception& e)
@@ -289,10 +322,14 @@ void	ConversionOfScalar::printResDouble( void )
 		{
 			if (inputType_ == charType)
 				std::cout << resDouble_ << std::endl;
+			else if (inputType_ == floatType)
+				std::cout << resFloat_ << std::endl;
 			else
 			{
 				std::stod(input_);
-				std::cout << std::fixed << std::setprecision(1) << resDouble_ << std::endl;
+				char * end;
+				resDouble_ = std::strtod(input_.c_str(), &end);
+				std::cout << resDouble_ << std::endl;
 			}
 		}
 		catch (std::exception& e)
