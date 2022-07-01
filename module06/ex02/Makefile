@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/06/30 16:32:41 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/07/01 16:24:24 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= ConversionOfScalar
+NAME= Base
 
 CXX= clang++
 
@@ -20,7 +20,7 @@ RM= rm -rf
 
 ODIR= objs
 
-SRCS= main.cpp ConversionOfScalar.cpp
+SRCS= main.cpp Base.cpp A.cpp B.cpp C.cpp
 
 OBJS= $(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
