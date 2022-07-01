@@ -13,6 +13,7 @@
 #include "ConversionOfScalar.hpp" // includes <string> : std::stod  .c_str .empty() .erase(index, str.length)
 #include "define.hpp"
 #include <iostream>
+#include <iomanip> // setprecision(int)
 #include <limits.h>
 #include <cstdlib> // std::atoi std::atof
 #include <cctype> // std::isalpha std::isdigit std::isprint
@@ -61,7 +62,7 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 	if (aPseudoType != (eScalarType)FAIL)
 		return aPseudoType;
 
-	if (input_.length() == 1 && (!std::isdigit(input_[0])) && (std::isprint(input_[0])))
+	if (input_.length() == 1 && (std::isalpha(input_[0])) && (std::isprint(input_[0])))
 	{
 		resChar_ = input_[0];
 		return charType;
@@ -71,6 +72,7 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 	int plus = 0;
 	int minus = 0;
 	int dot = 0;
+	int dotIndex = 0;
 	int f = 0;
 
 	while (input_[i])
@@ -82,18 +84,16 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 		if (input_[i] == '-')
 			minus++;
 		if (input_[i] == '.')
+		{
 			dot++;
+			dotIndex = i;
+		}
 		if (input_[i] == 'f')
 			f++;
 		i++;
 	}
 	if (plus > 1 || minus > 1 || dot > 1 || f > 1)
 		return errorType;
-	if (f == 1)
-	{
-		if (input_[input_.size() - 1] != 'f')
-			return errorType;
-	}
 	if (plus == 1 || minus == 1)
 	{
 		if (plus == minus)
@@ -101,10 +101,20 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 		if (input_[0] != '+' && input_[0] != '-')
 			return errorType;
 	}
+	if (dot == 1)
+	{
+		if (input_[dotIndex + 1] && !std::isdigit(input_[dotIndex + 1]))
+			return errorType;
+	}
+	if (f == 1)
+	{
+		if (input_[input_.size() - 1] != 'f' || dot == 0)
+			return errorType;
+	}
 
 	try
 	{
-		if (input_[input_.size() -1] != 'f' && input_.find(".", 0) != std::string::npos)
+		if (input_[input_.size() - 1] != 'f' && input_.find(".", 0) == std::string::npos)
 		{
 			resInt_ = std::stoi(input_);
 			return intType;
@@ -127,9 +137,10 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 		resDouble_ = std::stod(input_);
 		return doubleType;
 	}
-	catch (std::exception& e)	{}
+	catch (std::exception& e)	
+	{ return doubleType; /* not returning errorType, because it will be catch again later in printResDouble with the message overflow instead of impossible */ }
 
-	return errorType;
+	return errorType; // maybe this return is useless 
 }
 
 eScalarType	ConversionOfScalar::isPseudoType( void )
@@ -159,9 +170,6 @@ void	ConversionOfScalar::staticCastMachine( void )
 		case 0: //charType : resChar
 		{
 			resInt_ = static_cast<int>(resChar_); // char to ascii value
-			
-			std::cout << resInt_ << std::endl;
-
 			resFloat_ = static_cast<float>(resInt_);
 			resDouble_ = static_cast<double>(resInt_);
 			break ;
@@ -194,6 +202,7 @@ void	ConversionOfScalar::staticCastMachine( void )
 
 void	ConversionOfScalar::printResults( void )
 {
+	//std::cout << "input type: " << inputType_ << std::endl;
 	printResChar();
 	printResInt();
 	printResFloat();
@@ -237,10 +246,46 @@ void	ConversionOfScalar::printResInt( void )
 
 void	ConversionOfScalar::printResFloat( void )
 {
+	std::cout << "float: ";
 
+	if (inputType_ == errorType)
+		std::cout << "impossible" << std::endl;
+	else if (inputType_ == pseudoTypeF)
+		std::cout << input_ << std::endl;
+	else if (inputType_ == pseudoTypeD)
+		std::cout << input_ + 'f' << std::endl;
+	else if (inputType_ == intType)
+		std::cout << resFloat_ << ".0f" << std::endl;
+	else
+	{
+		try
+		{
+			std::stof(input_);
+			std::cout << std::fixed << std::setprecision(1) << resFloat_ << 'f' << std::endl;
+		}
+		catch (std::exception& e)
+		{ std::cout << "overflow" << std::endl; }
+	}
 }
 
 void	ConversionOfScalar::printResDouble( void )
 {
+	std::cout << "double: ";
 
+	if (inputType_ == errorType)
+		std::cout << "impossible" << std::endl;
+	else if (inputType_ == pseudoTypeF)
+		std::cout << input_.erase(input_.size() - 1) << std::endl;
+	else if (inputType_ == pseudoTypeD)
+		std::cout << input_ << std::endl;
+	else
+	{
+		try
+		{
+			std::stod(input_);
+			std::cout << std::fixed << std::setprecision(1) << resDouble_ << std::endl;
+		}
+		catch (std::exception& e)
+		{ std::cout << "overflow" << std::endl; }
+	}
 }
