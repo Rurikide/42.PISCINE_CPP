@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:46:07 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/07/01 13:13:20 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/07/01 13:23:47 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,14 +173,14 @@ void	ConversionOfScalar::staticCastMachine( void )
 			resInt_ = static_cast<int>(resChar_); // char to ascii value
 			resFloat_ = static_cast<float>(resInt_);
 			resDouble_ = static_cast<double>(resInt_);
-
+/*
 			std::cout << "initial input: " << input_ << std::endl;
 			std::cout << "resChar:" << resChar_ << std::endl;
 			std::cout << "static_cast char to int: " << resInt_ << std::endl;
 			std::cout << "static_cast char to float: " << resFloat_ << std::endl;
 			std::cout << "static_cast char to double: " << resDouble_ << std::endl;
 			std::cout << SORAIRO <<  "===============================================" << END_COLOR << std::endl;
-
+*/
 			break ;
 		}
 		case 1: //intType : resInt_
@@ -188,14 +188,14 @@ void	ConversionOfScalar::staticCastMachine( void )
 			resChar_ = static_cast<char>(resInt_);
 			resFloat_ = static_cast<float>(resInt_);
 			resDouble_ = static_cast<double>(resInt_);
-			
+/*			
 			std::cout << "initial input: " << input_ << std::endl;
 			std::cout << "resInt:" << resInt_ << std::endl;
 			std::cout << "static_cast int to char: " << resChar_ << std::endl;
 			std::cout << "static_cast int to float: " << resFloat_ << std::endl;
 			std::cout << "static_cast int to double: " << resDouble_ << std::endl;
 			std::cout << SORAIRO <<  "===============================================" << END_COLOR << std::endl;
-
+*/
 			break ;
 		}
 		case 2: //floatType : resFloat_
@@ -203,14 +203,14 @@ void	ConversionOfScalar::staticCastMachine( void )
 			resChar_ = static_cast<char>(resFloat_);
 			resInt_ = static_cast<int>(resFloat_);
 			resDouble_ = static_cast<double>(resFloat_);
-
+/*
 			std::cout << "initial input: " << input_ << std::endl;
 			std::cout << "resFloat:" << resFloat_ << std::endl;
 			std::cout << "static_cast float to char: " << resChar_ << std::endl;
 			std::cout << "static_cast float to int: " << resInt_ << std::endl;
 			std::cout << "static_cast float to double: " << resDouble_ << std::endl;
 			std::cout << SORAIRO <<  "===============================================" << END_COLOR << std::endl;
-
+*/
 			break ;
 		}
 		case 3: //doubleType : resDouble_
@@ -218,14 +218,14 @@ void	ConversionOfScalar::staticCastMachine( void )
 			resChar_ = static_cast<char>(resDouble_);
 			resInt_ = static_cast<int>(resDouble_);
 			resFloat_ = static_cast<float>(resDouble_);
-
+/*
 			std::cout << "initial input: " << input_ << std::endl;
 			std::cout << "resDouble:" << resDouble_ << std::endl;
 			std::cout << "static_cast double to char: " << resChar_ << std::endl;
 			std::cout << "static_cast double to int: " << resInt_ << std::endl;
 			std::cout << "static_cast double to float: " << resFloat_ << std::endl;
 			std::cout << SORAIRO <<  "===============================================" << END_COLOR << std::endl;
-			
+*/			
 			break ;
 		}
 		default:
