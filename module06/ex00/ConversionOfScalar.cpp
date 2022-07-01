@@ -58,7 +58,7 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 {
 	eScalarType  aPseudoType = isPseudoType();
 
-	if (aPseudoType != (eScalarType)-1)
+	if (aPseudoType != (eScalarType)FAIL)
 		return aPseudoType;
 
 	if (input_.length() == 1 && (!std::isdigit(input_[0])) && (std::isprint(input_[0])))
@@ -66,10 +66,45 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 		resChar_ = input_[0];
 		return charType;
 	}
+	
+	int i = 0;
+	int plus = 0;
+	int minus = 0;
+	int dot = 0;
+	int f = 0;
+
+	while (input_[i])
+	{	
+		if (!std::isdigit(input_[i]) && input_[i] != '+' && input_[i] != '-' && input_[i] != '.' && input_[i] != 'f')
+			return errorType;
+		if (input_[i] == '+')
+			plus++;
+		if (input_[i] == '-')
+			minus++;
+		if (input_[i] == '.')
+			dot++;
+		if (input_[i] == 'f')
+			f++;
+		i++;
+	}
+	if (plus > 1 || minus > 1 || dot > 1 || f > 1)
+		return errorType;
+	if (f == 1)
+	{
+		if (input_[input_.size() - 1] != 'f')
+			return errorType;
+	}
+	if (plus == 1 || minus == 1)
+	{
+		if (plus == minus)
+			return errorType;
+		if (input_[0] != '+' && input_[0] != '-')
+			return errorType;
+	}
 
 	try
 	{
-		if (*input_.end() != 'f' && input_.find(".", 0) != std::string::npos)
+		if (input_[input_.size() -1] != 'f' && input_.find(".", 0) != std::string::npos)
 		{
 			resInt_ = std::stoi(input_);
 			return intType;
@@ -79,7 +114,7 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 
 	try
 	{
-		if (*input_.end() == 'f')
+		if (input_[input_.size() - 1] == 'f')
 		{
 			resFloat_ = std::stof(input_);
 			return floatType;
@@ -100,10 +135,10 @@ eScalarType	ConversionOfScalar::parseInput( void ) // this-> is optional
 eScalarType	ConversionOfScalar::isPseudoType( void )
 {
 	if (this->input_ == "-inff" || this->input_ == "+inff" || this->input_ == "nanf")
-		return pseudoType; // 5
+		return pseudoTypeF; // 5
 
 	if (this->input_ == "-inf" || this->input_ == "+inf" || this->input_ == "nan")
-		return pseudoType; // 6
+		return pseudoTypeD; // 6
 
 	return (eScalarType)FAIL; // -1
 }
@@ -169,7 +204,7 @@ void	ConversionOfScalar::printResChar( void )
 {
 	std::cout << "char: ";
 
-	if (inputType_ == pseudoType || inputType_ == errorType)
+	if (inputType_ == pseudoTypeF || inputType_ == pseudoTypeD || inputType_ == errorType)
 		std::cout << "impossible" << std::endl;
 	else if (resChar_ < 32 || resChar_ > 126 || resInt_ < 32 || resInt_ > 126)
 		std::cout << "Non displayable" << std::endl;
@@ -181,14 +216,19 @@ void	ConversionOfScalar::printResInt( void )
 {
 	std::cout << "int: ";
 
-	if (inputType_ == pseudoType || inputType_ == errorType)
+	if (inputType_ == pseudoTypeF || inputType_ == pseudoTypeD || inputType_ == errorType)
 		std::cout << "impossible" << std::endl;
 	else
 	{
 		try
 		{
-			if (inputType_ == charType || std::stoi(input_))
+			if (inputType_ == charType)
 				std::cout << resInt_ << std::endl;
+			else
+			{
+				std::stoi(input_);
+				std::cout << resInt_ << std::endl;
+			}
 		}
 		catch (std::exception& e)
 		{ std::cout << "overflow" << std::endl; }

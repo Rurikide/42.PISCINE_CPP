@@ -15,7 +15,7 @@
 
 #include <string>
 
-enum eScalarType { charType = 1, intType = 2, floatType = 3, doubleType = 4, pseudoType = 5, errorType = 6 };
+enum eScalarType { charType = 1, intType = 2, floatType = 3, doubleType = 4, pseudoTypeF = 5, pseudoTypeD = 6, errorType = 7 };
 
 class ConversionOfScalar {
 
