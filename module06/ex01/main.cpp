@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 14:09:51 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/07/01 14:41:23 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/07/01 14:57:23 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ int	main(void)
 	std::cout << "Object address: " << MIDORI << object << END_COLOR << std::endl;
 	std::cout << "Object type: " << MIDORI << object->type << END_COLOR << std::endl;
 	std::cout << "Object year of creation: circa " << MIDORI << object->yearOfCreation << END_COLOR << std::endl;
-	std::cout << "Object value: " << MIDORI << object->value << "$" << END_COLOR << std::endl;
+	std::cout << "Object value: " << MIDORI << "$" << object->value << END_COLOR << std::endl;
 	
 	uintptr_t serializedObject = serialize(object);
 
 	Data* deserializedObject = deserialize(serializedObject);
 	
-	std::cout << "dObject address: " << MIDORI << deserializedObject << END_COLOR << std::endl;
-	std::cout << "dObject type: " << MIDORI << deserializedObject->type << END_COLOR << std::endl;
-	std::cout << "dObject year of creation: circa " << MIDORI << deserializedObject->yearOfCreation << END_COLOR << std::endl;
-	std::cout << "dObject value: " << MIDORI << deserializedObject->value << "$" << END_COLOR << std::endl;
+	std::cout << "deserializedObject address: " << SORAIRO << deserializedObject << END_COLOR << std::endl;
+	std::cout << "deserializedObject type: " << SORAIRO << deserializedObject->type << END_COLOR << std::endl;
+	std::cout << "deserializedObject year of creation: circa " << SORAIRO << deserializedObject->yearOfCreation << END_COLOR << std::endl;
+	std::cout << "deserializedObject value: " << SORAIRO << "$" << deserializedObject->value << END_COLOR << std::endl;
 
 	delete object;
 
