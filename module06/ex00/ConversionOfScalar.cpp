@@ -260,8 +260,13 @@ void	ConversionOfScalar::printResFloat( void )
 	{
 		try
 		{
-			std::stof(input_);
-			std::cout << std::fixed << std::setprecision(1) << resFloat_ << 'f' << std::endl;
+			if (inputType_ == charType)
+				std::cout << resFloat_ << std::endl;
+			else
+			{
+				std::stof(input_);
+				std::cout << std::fixed << std::setprecision(1) << resFloat_ << 'f' << std::endl;
+			}
 		}
 		catch (std::exception& e)
 		{ std::cout << "overflow" << std::endl; }
@@ -282,8 +287,13 @@ void	ConversionOfScalar::printResDouble( void )
 	{
 		try
 		{
-			std::stod(input_);
-			std::cout << std::fixed << std::setprecision(1) << resDouble_ << std::endl;
+			if (inputType_ == charType)
+				std::cout << resDouble_ << std::endl;
+			else
+			{
+				std::stod(input_);
+				std::cout << std::fixed << std::setprecision(1) << resDouble_ << std::endl;
+			}
 		}
 		catch (std::exception& e)
 		{ std::cout << "overflow" << std::endl; }
