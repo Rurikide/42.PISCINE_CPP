@@ -19,14 +19,14 @@ int	main(void)
 	
 	std::cout << "int a = " << a << std::endl;
 	std::cout << "int b = " << b << std::endl;
-	swap<int>(a, b);
+	::swap<int>(a, b);
 	std::cout << "swap int a = " << a << std::endl;
 	std::cout << "swap int b = " << b << std::endl;
 
 
 	std::cout << "float c = " << c << std::endl;
 	std::cout << "float d = " << d << std::endl;
-	swap<float>(c, d);
+	::swap<float>(c, d);
 	std::cout << "swap float c = " << c << std::endl;
 	std::cout << "swap float d = " << d << std::endl;
 
@@ -41,15 +41,40 @@ int	main(void)
 
 	int		dix = 10;
 	int		vingt = 20;
+	int		twenty = 20;
 	float		pie = 3.14;
 	float		neperienne = 2.71;
 	std::string	aloha = "aloha";
 	std::string	bueno = "bueno";
 
-	
+	std::cout << MIDORI << "MIN between dix and vingt is: " << ::min<int>(dix, vingt) << std::endl;
+	std::cout << "MIN between vingt and twenty is: " << ::min<int>(vingt, twenty) << std::endl;
+	std::cout << "MIN between pie and neperienne is: " << ::min<float>(pie, neperienne) << std::endl;
+	std::cout << "MIN between aloha and bueno is: " << ::min<std::string>(aloha, bueno) << END_COLOR << std::endl;
 
 	/*-------------------TEST-MAX--------------------*/
+	
+	std::cout << SORAIRO << "MAX between dix and vingt is: " << ::max<int>(dix, vingt) << std::endl;
+	std::cout << "MAX between vingt and twenty is: " << ::max<int>(vingt, twenty) << std::endl;
+	std::cout << "MAX between pie and neperienne is: " << ::max<float>(pie, neperienne) << std::endl;
+	std::cout << "MAX between aloha and bueno is: " << ::max<std::string>(aloha, bueno) << END_COLOR << std::endl;
 
 
+	/*--------------------PDF-TEST-------------------*/
+	{
+
+		int a = 2;
+		int b = 3;
+		::swap( a, b );
+		std::cout << "a = " << a << ", b = " << b << std::endl;
+		std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+		std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+		std::string c = "chaine1";
+		std::string d = "chaine2";
+		::swap(c, d);
+		std::cout << "c = " << c << ", d = " << d << std::endl;
+		std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+		std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	}
 	return SUCCESS;
 }
