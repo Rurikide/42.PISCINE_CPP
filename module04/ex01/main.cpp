@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+R* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:19:41 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/24 14:54:27 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/07/03 13:17:21 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ int	main( void )
 	}
 
 	for (int nb = 0; nb < CAPACITY; nb++)
+	{
 		animalArray[nb]->makeSound();
+		animalArray[nb]->getBrain()->setIdeas("animal_idea");
+		animalArray[nb]->getBrain()->printIdeas();
+	}
 
 	for	(int nb = 0; nb < CAPACITY; nb++)
 		delete animalArray[nb];
