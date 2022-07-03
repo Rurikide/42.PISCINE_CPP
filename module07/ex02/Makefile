@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/07/01 17:43:08 by tshimoda         ###   ########.fr        #
+#    Updated: 2022/07/03 16:30:48 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= Base
+NAME= Array
 
 CXX= clang++
 
