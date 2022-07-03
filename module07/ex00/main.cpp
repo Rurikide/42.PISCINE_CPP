@@ -6,7 +6,7 @@
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 13:33:07 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/07/03 13:33:12 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/07/03 14:28:05 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ int	main(void)
 		std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 		std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	}
+
 	return SUCCESS;
 }
