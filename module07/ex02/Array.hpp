@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tshimoda <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 13:34:58 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/07/03 15:38:09 by tshimoda         ###   ########.fr       */
+/*   Created: 2022/07/03 15:16:27 by tshimoda          #+#    #+#             */
+/*   Updated: 2022/07/03 15:16:54 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
-#include <iostream>
 
-template<typename T>
-void	iter( T* array, size_t len, void (*f)(const T&) )
-{
-	for (size_t i = 0; i < len; i++)
-	{
-		f(array[i]);
-	}
-}
-
-template<typename T>
-void	printElement( const T& element )
-{
-	std::cout << element << std::endl;
-}
 
 #endif
