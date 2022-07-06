@@ -55,19 +55,38 @@ void	Span::fillSpan( ITER first, ITER last )
 		addNumber(*first);
 }
 
-int	shortestSpan( void )
+int	Span::shortestSpan( void )
 {
 	if (vec.size() <= 1)
 		throw Span::NoSpanException();
+	
+	std::vector<int> delta(capacity);
 
+	std::adjacent_difference(vec.begin(), vec.end(), delta.begin());
+
+	for (std::vector<int>::iterator it = delta.begin(); it != delta.end(); it++)
+		*it = std::abs(*it);
+
+	std::sort(delta.begin(), delta.end());
+
+	return *delta.begin();
 }
 
-int	longuestSpan( void )
+int	Span::longestSpan( void )
 {
 	if (vec.size() <= 1)
 		throw Span::NoSpanException();
+	
+	std::vector<int> delta(capacity);
+	
+	std::adjacent_difference(vec.begin(), vec.end(), delta.begin());
 
+	for (std::vector<int>::iterator it = delta.begin(); it != delta.end(); it++)
+		*it = std::abs(*it);
 
+	std::sort(delta.begin(), delta.end());
+	
+	return *delta.rbegin(); // rbegin = last element inserted in the vector
 }
 
 const char*	Span::FullCapacityException::what() const throw()
@@ -77,6 +96,6 @@ const char*	Span::FullCapacityException::what() const throw()
 
 const char*	Span::NoSpanException::what() const throw()
 {
-	return "Error: no span distance found";
+	return "Error: no span distance found, since this vector array only contains 0 to 1 element";
 }
 

@@ -14,12 +14,15 @@
 #define SPAN_HPP
 
 #include <algorithm>
+#include <cmath>
 #include <cstdlib>
 #include <ctime>
 #include <exception>
 #include <iostream>
+#include <numeric> // std::adjacent_difference
 #include <string>
 #include <vector>
+#include "define.hpp"
 
 #define ITER std::vector<int>::iterator
 
@@ -45,7 +48,7 @@ class Span {
 		void	fillSpan( ITER first, ITER last ); 
 
 		int	shortestSpan( void ); // return the shortest dist between two elements in the vector array
-		int	longuestSpan( void );
+		int	longestSpan( void );
 
 		class FullCapacityException : public std::exception
 		{

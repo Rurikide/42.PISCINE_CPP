@@ -11,29 +11,42 @@
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include "define.hpp"
-#include <iostream>
 
-#define SIZE 100
+#define SIZE 10
 
 int	main(void)
 {
+  	{
+		Span sp = Span(5);
+  	
+		try
+		{
+			sp.addNumber(6);
+  			sp.addNumber(3);
+  			sp.addNumber(17);
+  			sp.addNumber(9);
+  			sp.addNumber(11);
+  			std::cout << "shortestSpan: " << sp.shortestSpan() << std::endl;
+  			std::cout << "longuestSpan: " << sp.longestSpan() << std::endl;
+  		}
+		catch (std::exception& e)
+		{
+			std::cout << AKAI << e.what() << END_COLOR << std::endl;
+		}
+	}
 	{
-		Span a = Span(2);
+		Span a = Span(0);
 
 		try
 		{
-			a.addNumber(20);
-			//a.addNumber(30);
-			//a.addNumber(0);
-			a.printNumber();
+			a.addNumber(1);
+
 		}
 		catch (std::exception& e)
 		{
 			std::cout << AKAI << e.what() << END_COLOR << std::endl;
 		}
 	}	
-
 	{
 		try
 		{
