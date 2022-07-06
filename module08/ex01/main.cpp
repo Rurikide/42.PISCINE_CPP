@@ -17,6 +17,7 @@
 int	main(void)
 {
   	{
+		std::cout << MIDORI << "[] TEST SCOPE #1 []" << END_COLOR << std::endl;
 		Span sp = Span(5);
   	
 		try
@@ -26,8 +27,8 @@ int	main(void)
   			sp.addNumber(17);
   			sp.addNumber(9);
   			sp.addNumber(11);
-  			std::cout << "shortestSpan: " << sp.shortestSpan() << std::endl;
-  			std::cout << "longuestSpan: " << sp.longestSpan() << std::endl;
+  			std::cout << MOMOIRO "shortestSpan: " END_COLOR << sp.shortestSpan() << std::endl;
+  			std::cout << SORAIRO "longestSpan: " END_COLOR << sp.longestSpan() << std::endl;
   		}
 		catch (std::exception& e)
 		{
@@ -35,6 +36,8 @@ int	main(void)
 		}
 	}
 	{
+		std::cout << MIDORI << "[] TEST SCOPE #2 []" << END_COLOR << std::endl;
+		
 		Span a = Span(0);
 
 		try
@@ -48,20 +51,39 @@ int	main(void)
 		}
 	}	
 	{
+		std::cout << MIDORI << "[] TEST SCOPE #3 []" << END_COLOR << std::endl;
+		
+		Span b = Span(4);
+
 		try
 		{
-			Span b = Span(SIZE);
+			b.addNumber(1);
+			b.longestSpan();
+		}
+		catch (std::exception& e)
+		{
+			std::cout << AKAI << e.what() << END_COLOR << std::endl;
+		}
+	}	
+	{
+		std::cout << MIDORI << "[] TEST SCOPE #4 []" << END_COLOR << std::endl;
+	
+		Span b = Span(SIZE);
+		
+		try
+		{
 			srand(static_cast<unsigned int>(time(0)));
 			std::vector<int> v;
 			for (size_t i = 0; i < SIZE; i++)
 				v.push_back(rand());
-
 			b.fillSpan(v.begin(), v.end());
 			b.printNumber();
+  			std::cout << MOMOIRO "shortestSpan: " END_COLOR << b.shortestSpan() << std::endl;
+  			std::cout << SORAIRO "longestSpan: " END_COLOR << b.longestSpan() << std::endl;
 		}
 		catch (std::exception& e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cout << AKAI << e.what() << END_COLOR << std::endl;
 		}
 	}
 	/*	try

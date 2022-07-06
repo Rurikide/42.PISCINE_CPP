@@ -24,8 +24,6 @@
 #include <vector>
 #include "define.hpp"
 
-#define ITER std::vector<int>::iterator
-
 class Span {
 
 	private:
@@ -45,7 +43,7 @@ class Span {
 		
 		void	addNumber( int value );
 		void	printNumber( void );
-		void	fillSpan( ITER first, ITER last ); 
+		void	fillSpan( std::vector<int>::iterator first, std::vector<int>::iterator last ); 
 
 		int	shortestSpan( void ); // return the shortest dist between two elements in the vector array
 		int	longestSpan( void );

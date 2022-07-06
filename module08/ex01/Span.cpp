@@ -45,11 +45,11 @@ void	Span::addNumber( int value )
 
 void	Span::printNumber( void )
 {
-	for (ITER it = vec.begin(); it != vec.end(); ++it)
+	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
 		std::cout << *it << std::endl;
 }
 
-void	Span::fillSpan( ITER first, ITER last )
+void	Span::fillSpan( std::vector<int>::iterator first, std::vector<int>::iterator last )
 {
 	for (; first != last; ++first)
 		addNumber(*first);
