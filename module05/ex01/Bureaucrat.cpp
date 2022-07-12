@@ -6,7 +6,7 @@
 /*   By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:11:11 by tshimoda          #+#    #+#             */
-/*   Updated: 2022/06/29 07:39:08 by tshimoda         ###   ########.fr       */
+/*   Updated: 2022/07/12 10:45:08 by tshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	Bureaucrat::signForm( Form& form ) const
 		std::cout << MIDORI << this->getName() << END_COLOR << AKAI << e.what() << END_COLOR << std::endl;
 		return ;
 	}
+	std::cout << MIDORI << this->getName() << END_COLOR << " signed the form " << SORAIRO << form.getName() << END_COLOR << std::endl;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
