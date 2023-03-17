@@ -6,11 +6,11 @@
 #    By: tshimoda <tshimoda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/04 23:02:18 by tshimoda          #+#    #+#              #
-#    Updated: 2022/07/04 10:49:43 by tshimoda         ###   ########.fr        #
+#    Updated: 2023/03/17 09:23:25 by tshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= EasyFind
+NAME= RPN
 
 CXX= clang++
 
